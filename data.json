@@ -1,0 +1,3144 @@
+[
+   {
+      "name": "Addam Marbrand"
+   },
+   {
+      "name": "Aegon Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parents": [
+         "Elia Martell",
+         "Rhaegar Targaryen"
+      ],
+      "siblings": [
+         "Rhaenys Targaryen",
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Gregor Clegane"
+      ]
+   },
+   {
+      "name": "Aeron Greyjoy",
+      "house": "Greyjoy",
+      "siblings": [
+         "Balon Greyjoy",
+         "Euron Greyjoy"
+      ],
+      "nickname": "Damphair"
+   },
+   {
+      "name": "Aerys II Targaryen",
+      "house": "Targaryen",
+      "nickname": "The Mad King",
+      "royal": true,
+      "killed": [
+         "Brandon Stark",
+         "Rickard Stark"
+      ],
+      "servedBy": [
+         "Arthur Dayne",
+         "Jaime Lannister"
+      ],
+      "parentOf": [
+         "Daenerys Targaryen",
+         "Rhaegar Targaryen",
+         "Viserys Targaryen"
+      ],
+      "siblings": [
+         "Rhaella Targaryen"
+      ],
+      "marriedEngaged": [
+         "Rhaella Targaryen"
+      ],
+      "killedBy": [
+         "Jaime Lannister"
+      ]
+   },
+   {
+      "name": "Akho",
+      "killedBy": [
+         "Daario Naharis"
+      ]
+   },
+   {
+      "name": "Alliser Thorne",
+      "killed": [
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Alton Lannister",
+      "house": "Lannister",
+      "killedBy": [
+         "Jaime Lannister"
+      ]
+   },
+   {
+      "name": "Alys Karstark",
+      "parents": [
+         "Harald Karstark"
+      ]
+   },
+   {
+      "name": "Amory Lorch",
+      "killed": [
+         "Yoren"
+      ],
+      "killedBy": [
+         "Jaqen H'ghar"
+      ]
+   },
+   {
+      "name": "Anguy"
+   },
+   {
+      "name": "Archmaester Marwyn"
+   },
+   {
+      "name": "Areo Hotah",
+      "killedBy": [
+         "Tyene Sand"
+      ],
+      "serves": [
+         "Doran Martell"
+      ]
+   },
+   {
+      "name": "Armeca"
+   },
+   {
+      "name": "Arthur"
+   },
+   {
+      "name": "Arthur Dayne",
+      "kingsguard": true,
+      "killedBy": [
+         "Howland Reed",
+         "Eddard Stark"
+      ],
+      "serves": [
+         "Aerys II Targaryen"
+      ]
+   },
+   {
+      "name": "Arya Stark",
+      "house": "Stark",
+      "siblings": [
+         "Robb Stark",
+         "Sansa Stark",
+         "Bran Stark",
+         "Rickon Stark"
+      ],
+      "killed": [
+         "Red Keep Stableboy",
+         "Frey Soldier #1",
+         "Polliver",
+         "Rorge",
+         "Ghita",
+         "Meryn Trant",
+         "The Waif",
+         "Black Walder Rivers",
+         "Lothar Frey",
+         "Walder Frey",
+         "Petyr Baelish",
+         "The Night King",
+         "White Walker",
+         "Viserion"
+      ],
+      "parents": [
+         "Eddard Stark",
+         "Catelyn Stark"
+      ],
+      "guardedBy": [
+         "Nymeria"
+      ]
+   },
+   {
+      "name": "Baby Sam",
+      "parents": [
+         "Samwell Tarly",
+         "Gilly"
+      ]
+   },
+   {
+      "name": "Balon Greyjoy",
+      "house": "Greyjoy",
+      "killedBy": [
+         "Euron Greyjoy"
+      ],
+      "parentOf": [
+         "Yara Greyjoy",
+         "Theon Greyjoy"
+      ],
+      "siblings": [
+         "Euron Greyjoy",
+         "Aeron Greyjoy"
+      ]
+   },
+   {
+      "name": "Baratheon Guard",
+      "house": "Baratheon"
+   },
+   {
+      "name": "Barristan Selmy",
+      "killedBy": [
+         "Sons of the Harpy"
+      ],
+      "serves": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Benjen Stark",
+      "house": "Stark",
+      "parents": [
+         "Rickard Stark"
+      ],
+      "siblings": [
+         "Brandon Stark",
+         "Lyanna Stark",
+         "Eddard Stark"
+      ],
+      "killedBy": [
+         "Wights"
+      ]
+   },
+   {
+      "name": "Beric Dondarrion",
+      "killedBy": [
+         "Sandor Clegane",
+         "Wights"
+      ]
+   },
+   {
+      "name": "Bianca"
+   },
+   {
+      "name": "Biter",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Black Lorren"
+   },
+   {
+      "name": "Black Walder Rivers",
+      "house": "Frey",
+      "killed": [
+         "Catelyn Stark"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ],
+      "parents": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Bobono"
+   },
+   {
+      "name": "Bowen Marsh",
+      "killed": [
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Brandon Stark",
+      "house": "Stark",
+      "killedBy": [
+         "Aerys II Targaryen"
+      ],
+      "parents": [
+         "Rickard Stark"
+      ],
+      "siblings": [
+         "Lyanna Stark",
+         "Benjen Stark",
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Bran Stark",
+      "house": "Stark",
+      "royal": true,
+      "siblings": [
+         "Robb Stark",
+         "Sansa Stark",
+         "Arya Stark",
+         "Rickon Stark"
+      ],
+      "parents": [
+         "Eddard Stark",
+         "Catelyn Stark"
+      ],
+      "guardedBy": [
+         "Summer"
+      ]
+   },
+   {
+      "name": "Brea"
+   },
+   {
+      "name": "Brienne of Tarth",
+      "kingsguard": true,
+      "killed": [
+         "Soldier Tom",
+         "Stannis Baratheon",
+         "Bolton Officer"
+      ],
+      "serves": [
+         "Renly Baratheon",
+         "Catelyn Stark",
+         "Sansa Stark",
+         "Bran Stark"
+      ],
+      "servedBy": [
+         "Podrick Payne"
+      ]
+   },
+   {
+      "name": "Bronn",
+      "killed": [
+         "Vardis Egen",
+         "Matthos Seaworth",
+         "Lead Dornish Guard"
+      ],
+      "marriedEngaged": [
+         "Lollys Stokeworth"
+      ]
+   },
+   {
+      "name": "Brother Ray",
+      "killedBy": [
+         "Lem Lemoncloak"
+      ]
+   },
+   {
+      "name": "Brynden Tully",
+      "house": "Tully",
+      "nickname": "Blackfish",
+      "siblings": [
+         "Hoster Tully"
+      ]
+   },
+   {
+      "name": "Captain of the Archers"
+   },
+   {
+      "name": "Catelyn Stark",
+      "house": [
+         "Stark",
+         "Tully"
+      ],
+      "killed": [
+         "Joyeuse Erenford"
+      ],
+      "killedBy": [
+         "Black Walder Rivers"
+      ],
+      "parents": [
+         "Hoster Tully"
+      ],
+      "parentOf": [
+         "Robb Stark",
+         "Sansa Stark",
+         "Arya Stark",
+         "Bran Stark",
+         "Rickon Stark"
+      ],
+      "siblings": [
+         "Lysa Arryn",
+         "Edmure Tully"
+      ],
+      "marriedEngaged": [
+         "Eddard Stark",
+         "Brandon Stark"
+      ]
+   },
+   {
+      "name": "Catspaw Assassin",
+      "killedBy": [
+         "Summer"
+      ]
+   },
+   {
+      "name": "Cersei Lannister",
+      "house": [
+         "Lannister",
+         "Baratheon"
+      ],
+      "parents": [
+         "Tywin Lannister"
+      ],
+      "parentOf": [
+         "Joffrey Baratheon",
+         "Myrcella Baratheon",
+         "Tommen Baratheon"
+      ],
+      "royal": true,
+      "siblings": [
+         "Jaime Lannister",
+         "Tyrion Lannister"
+      ],
+      "marriedEngaged": [
+         "Robert Baratheon"
+      ],
+      "killed": [
+         "Lancel Lannister",
+         "High Sparrow",
+         "Loras Tyrell",
+         "Mace Tyrell",
+         "Margaery Tyrell",
+         "Kevan Lannister",
+         "Tyene Sand"
+      ],
+      "killedBy": [
+         "Roof collapse"
+      ]
+   },
+   {
+      "name": "Child of the Forest"
+   },
+   {
+      "name": "Citadel Maester"
+   },
+   {
+      "name": "Colen of Greenpools"
+   },
+   {
+      "name": "Craster",
+      "killedBy": [
+         "Karl Tanner"
+      ]
+   },
+   {
+      "name": "Daario Naharis",
+      "killed": [
+         "Mero",
+         "Prendahl na Ghezn",
+         "Oznak zo Pahl",
+         "Mossador",
+         "Iggo",
+         "Akho"
+      ],
+      "serves": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Daenerys Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parents": [
+         "Aerys II Targaryen",
+         "Rhaella Targaryen"
+      ],
+      "siblings": [
+         "Rhaegar Targaryen",
+         "Viserys Targaryen"
+      ],
+      "killed": [
+         "Khal Drogo",
+         "Mirri Maz Duur",
+         "Doreah",
+         "Xaro Xhoan Daxos",
+         "Khal Rhalko",
+         "Khal Brozho",
+         "Khal Qorro",
+         "Khal Forzho",
+         "Khal Moro",
+         "Dothraki Bloodrider #1",
+         "Dothraki Bloodrider #2",
+         "Randyll Tarly",
+         "Dickon Tarly",
+         "Eleanor",
+         "Eleanor's Daughter",
+         "Lord Varys"
+      ],
+      "servedBy": [
+         "Barristan Selmy",
+         "Daario Naharis",
+         "Grey Worm",
+         "Jorah Mormont",
+         "Missandei",
+         "Tyrion Lannister"
+      ],
+      "parentOf": [
+         "Rhaego"
+      ],
+      "marriedEngaged": [
+         "Khal Drogo"
+      ],
+      "guardedBy": [
+         "Drogon",
+         "Rhaegal",
+         "Viserion"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Dagmer Cleftjaw"
+   },
+   {
+      "name": "Daisy"
+   },
+   {
+      "name": "Davos Seaworth",
+      "serves": [
+         "Stannis Baratheon",
+         "Jon Snow"
+      ],
+      "parentOf": [
+         "Matthos Seaworth"
+      ]
+   },
+   {
+      "name": "Dickon Tarly",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ],
+      "parents": [
+         "Randyll Tarly",
+         "Melessa Tarly"
+      ],
+      "siblings": [
+         "Samwell Tarly",
+         "Talla Tarly"
+      ]
+   },
+   {
+      "name": "Dongo the Giant",
+      "killedBy": [
+         "Night's Watchman"
+      ]
+   },
+   {
+      "name": "Donnel Waynwood"
+   },
+   {
+      "name": "Dontos Hollard",
+      "killedBy": [
+         "Petyr Baelish"
+      ]
+   },
+   {
+      "name": "Doran Martell",
+      "house": "Martell",
+      "killedBy": [
+         "Ellaria Sand"
+      ],
+      "parentOf": [
+         "Trystane Martell"
+      ],
+      "siblings": [
+         "Elia Martell",
+         "Oberyn Martell"
+      ]
+   },
+   {
+      "name": "Doreah",
+      "killed": [
+         "Irri"
+      ],
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Dothraki Bloodrider #1",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Dothraki Bloodrider #2",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Drennan",
+      "killedBy": [
+         "Osha"
+      ]
+   },
+   {
+      "name": "Drogon",
+      "house": "Targaryen",
+      "siblings": [
+         "Rhaegal",
+         "Viserion"
+      ],
+      "guardianOf": [
+         "Daenerys Targaryen"
+      ],
+      "killed": [
+         "Pyat Pree",
+         "Kraznys mo Nakloz",
+         "Zalla"
+      ]
+   },
+   {
+      "name": "Drowned Priest"
+   },
+   {
+      "name": "Eddard Stark",
+      "house": "Stark",
+      "nickname": "Ned",
+      "guardianOf": [
+         "Jon Snow"
+      ],
+      "siblings": [
+         "Brandon Stark",
+         "Benjen Stark",
+         "Lyanna Stark"
+      ],
+      "parents": [
+         "Rickard Stark"
+      ],
+      "killed": [
+         "Arthur Dayne",
+         "Will",
+         "Lady",
+         "Gerold Hightower"
+      ],
+      "allies": [
+         "Howland Reed",
+         "Robert Baratheon"
+      ],
+      "guardedBy": [
+         "Jon Arryn"
+      ],
+      "killedBy": [
+         "Ilyn Payne"
+      ],
+      "marriedEngaged": [
+         "Catelyn Stark"
+      ],
+      "parentOf": [
+         "Robb Stark",
+         "Sansa Stark",
+         "Arya Stark",
+         "Bran Stark",
+         "Rickon Stark"
+      ]
+   },
+   {
+      "name": "Eddison Tollett",
+      "killedBy": [
+         "Wight"
+      ]
+   },
+   {
+      "name": "Edmure Tully",
+      "house": "Tully",
+      "marriedEngaged": [
+         "Roslin Frey"
+      ],
+      "siblings": [
+         "Catelyn Stark",
+         "Lysa Arryn"
+      ]
+   },
+   {
+      "name": "Ellaria Sand",
+      "house": "Martell",
+      "killed": [
+         "Myrcella Baratheon",
+         "Doran Martell"
+      ],
+      "parentOf": [
+         "Tyene Sand"
+      ],
+      "marriedEngaged": [
+         "Oberyn Martell"
+      ]
+   },
+   {
+      "name": "Elia Martell",
+      "house": "Martell",
+      "royal": true,
+      "marriedEngaged": [
+         "Rhaegar Targaryen"
+      ],
+      "parentOf": [
+         "Rhaenys Targaryen",
+         "Aegon Targaryen"
+      ],
+      "killedBy": [
+         "Gregor Clegane"
+      ],
+      "siblings": [
+         "Doran Martell",
+         "Oberyn Martell"
+      ]
+   },
+   {
+      "name": "Eon Hunter"
+   },
+   {
+      "name": "Euron Greyjoy",
+      "house": "Greyjoy",
+      "killed": [
+         "Balon Greyjoy",
+         "Obara Sand",
+         "Nymeria Sand",
+         "Rhaegal"
+      ],
+      "siblings": [
+         "Balon Greyjoy",
+         "Aeron Greyjoy"
+      ],
+      "killedBy": [
+         "Jaime Lannister"
+      ]
+   },
+   {
+      "name": "Faceless Man"
+   },
+   {
+      "name": "Farlen"
+   },
+   {
+      "name": "Gared",
+      "killedBy": [
+         "White Walker"
+      ]
+   },
+   {
+      "name": "Gatins",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Gendry",
+      "house": "Baratheon",
+      "parents": [
+         "Robert Baratheon"
+      ],
+      "killed": [
+         "Kevin Eldon",
+         "Laurence Spellman"
+      ]
+   },
+   {
+      "name": "Gerold Hightower",
+      "killedBy": [
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Ghost",
+      "house": "Stark",
+      "siblings": [
+         "Grey Wind",
+         "Lady",
+         "Nymeria",
+         "Summer",
+         "Shaggydog"
+      ],
+      "guardianOf": [
+         "Jon Snow"
+      ],
+      "killed": [
+         "Rast"
+      ]
+   },
+   {
+      "name": "Gilly",
+      "marriedEngaged": [
+         "Samwell Tarly"
+      ],
+      "parentOf": [
+         "Baby Sam"
+      ],
+      "parents": [
+         "Craster"
+      ]
+   },
+   {
+      "name": "Goldcloak"
+   },
+   {
+      "name": "Goldcloak"
+   },
+   {
+      "name": "Goldcloak #1"
+   },
+   {
+      "name": "Goldcloak #2"
+   },
+   {
+      "name": "Grand Maester Pycelle",
+      "killedBy": [
+         "Little Birds"
+      ]
+   },
+   {
+      "name": "Great Master #1",
+      "killedBy": [
+         "Rebel Slaves",
+         "Viserion",
+         "Rhaegal"
+      ]
+   },
+   {
+      "name": "Great Master #2"
+   },
+   {
+      "name": "Great Master #3"
+   },
+   {
+      "name": "Great Master #4"
+   },
+   {
+      "name": "Great Master #5"
+   },
+   {
+      "name": "Great Master #6"
+   },
+   {
+      "name": "Great Master #7"
+   },
+   {
+      "name": "Greatjon Umber",
+      "parentOf": [
+         "Smalljon Umber"
+      ]
+   },
+   {
+      "name": "Gregor Clegane",
+      "nickname": "The Mountain",
+      "serves": [
+         "Tywin Lannister",
+         "Cersei Lannister"
+      ],
+      "killed": [
+         "Elia Martell",
+         "Rhaenys Targaryen",
+         "Aegon Targaryen",
+         "Hugh of the Vale",
+         "Oberyn Martell",
+         "King's Landing Boaster",
+         "Faith Militant",
+         "Missandei",
+         "Qyburn"
+      ],
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Greizhen mo Ullhor",
+      "killedBy": [
+         "Unsullied"
+      ]
+   },
+   {
+      "name": "Grenn",
+      "killed": [
+         "Mag the Mighty"
+      ],
+      "killedBy": [
+         "Mag the Mighty"
+      ]
+   },
+   {
+      "name": "Grey Wind",
+      "house": "Stark",
+      "siblings": [
+         "Lady",
+         "Nymeria",
+         "Summer",
+         "Shaggydog",
+         "Ghost"
+      ],
+      "guardianOf": [
+         "Robb Stark"
+      ],
+      "killed": [
+         "Rennick"
+      ],
+      "killedBy": [
+         "Frey Crossbowmen"
+      ]
+   },
+   {
+      "name": "Grey Worm",
+      "killed": [
+         "Belicho Paenymion",
+         "Razdal mo Eraz",
+         "Harry Strickland"
+      ],
+      "serves": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Hallyne"
+   },
+   {
+      "name": "Handmaid"
+   },
+   {
+      "name": "Handmaid"
+   },
+   {
+      "name": "Harald Karstark",
+      "parents": [
+         "Rickard Karstark"
+      ],
+      "parentOf": [
+         "Alys Karstark"
+      ]
+   },
+   {
+      "name": "Harry Strickland",
+      "killedBy": [
+         "Grey Worm"
+      ]
+   },
+   {
+      "name": "High Priestess"
+   },
+   {
+      "name": "High Septon",
+      "killedBy": [
+         "Kings Landing Rioters"
+      ]
+   },
+   {
+      "name": "High Septon"
+   },
+   {
+      "name": "High Sparrow",
+      "killedBy": [
+         "Cersei Lannister"
+      ]
+   },
+   {
+      "name": "Hizdahr zo Loraq",
+      "killedBy": [
+         "Sons of the Harpy"
+      ]
+   },
+   {
+      "name": "Hodor",
+      "killed": [
+         "Locke"
+      ],
+      "killedBy": [
+         "Wights"
+      ]
+   },
+   {
+      "name": "Hoster Tully",
+      "house": "Tully"
+   },
+   {
+      "name": "Hot Pie"
+   },
+   {
+      "name": "Howland Reed",
+      "allies": [
+         "Eddard Stark"
+      ],
+      "killed": [
+         "Arthur Dayne"
+      ],
+      "parentOf": [
+         "Jojen Reed",
+         "Meera Reed"
+      ]
+   },
+   {
+      "name": "Hugh of the Vale",
+      "killedBy": [
+         "Gregor Clegane"
+      ]
+   },
+   {
+      "name": "Illyrio Mopatis"
+   },
+   {
+      "name": "Ilyn Payne",
+      "killed": [
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Irri",
+      "killedBy": [
+         "Doreah"
+      ]
+   },
+   {
+      "name": "Izembaro"
+   },
+   {
+      "name": "Jacks"
+   },
+   {
+      "name": "Jafer Flowers",
+      "killedBy": [
+         "White Walker"
+      ]
+   },
+   {
+      "name": "Jaime Lannister",
+      "house": "Lannister",
+      "nickname": "The Kingslayer",
+      "kingsguard": true,
+      "parents": [
+         "Tywin Lannister"
+      ],
+      "parentOf": [
+         "Joffrey Baratheon",
+         "Myrcella Baratheon",
+         "Tommen Baratheon"
+      ],
+      "guardianOf": [
+         "Aerys II Targaryen",
+         "Robert Baratheon",
+         "Joffrey Baratheon"
+      ],
+      "killed": [
+         "Aerys II Targaryen",
+         "Jory Cassel",
+         "Alton Lannister",
+         "Torrhen Karstark",
+         "Olenna Tyrell",
+         "Euron Greyjoy"
+      ],
+      "siblings": [
+         "Cersei Lannister",
+         "Tyrion Lannister"
+      ],
+      "killedBy": [
+         "Roof collapse"
+      ]
+   },
+   {
+      "name": "Janos Slynt",
+      "killed": [
+         "Barra"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Jaqen H'ghar",
+      "killed": [
+         "The Tickler",
+         "Amory Lorch",
+         "Despondent Man"
+      ]
+   },
+   {
+      "name": "Jaqen's Disguise"
+   },
+   {
+      "name": "Jaremy Rykker"
+   },
+   {
+      "name": "Jeor Mormont",
+      "house": "Mormont",
+      "killedBy": [
+         "Rast"
+      ],
+      "parentOf": [
+         "Jorah Mormont"
+      ]
+   },
+   {
+      "name": "Jhiqui"
+   },
+   {
+      "name": "Joffrey Baratheon",
+      "house": "Baratheon",
+      "parents": [
+         "Robert Baratheon",
+         "Cersei Lannister",
+         "Jaime Lannister"
+      ],
+      "siblings": [
+         "Myrcella Baratheon",
+         "Tommen Baratheon"
+      ],
+      "marriedEngaged": [
+         "Sansa Stark",
+         "Margaery Tyrell"
+      ],
+      "royal": true,
+      "killed": [
+         "Ros"
+      ],
+      "killedBy": [
+         "Petyr Baelish",
+         "Olenna Tyrell"
+      ]
+   },
+   {
+      "name": "Jojen Reed",
+      "killedBy": [
+         "Meera Reed"
+      ],
+      "siblings": [
+         "Meera Reed"
+      ],
+      "parents": [
+         "Howland Reed"
+      ]
+   },
+   {
+      "name": "Jon Arryn",
+      "guardianOf": [
+         "Eddard Stark",
+         "Robert Baratheon"
+      ],
+      "allies": [
+         "Robert Baratheon"
+      ],
+      "killedBy": [
+         "Lysa Arryn"
+      ]
+   },
+   {
+      "name": "Jon Snow",
+      "house": [
+         "Stark",
+         "Targaryen"
+      ],
+      "royal": true,
+      "parents": [
+         "Rhaegar Targaryen",
+         "Lyanna Stark"
+      ],
+      "guardedBy": [
+         "Eddard Stark",
+         "Ghost"
+      ],
+      "killed": [
+         "Othor",
+         "Qhorin Halfhand",
+         "Orell",
+         "Karl Tanner",
+         "Styr",
+         "Mance Rayder",
+         "Janos Slynt",
+         "White Walker",
+         "Alliser Thorne",
+         "Othell Yarwyck",
+         "Bowen Marsh",
+         "Olly",
+         "Lyanna Stark",
+         "Daenerys Targaryen"
+      ],
+      "killedBy": [
+         "Alliser Thorne",
+         "Othell Yarwyck",
+         "Bowen Marsh",
+         "Olly"
+      ],
+      "marriedEngaged": [
+         "Ygritte"
+      ]
+   },
+   {
+      "name": "Jonos Bracken"
+   },
+   {
+      "name": "Jorah Mormont",
+      "house": "Mormont",
+      "killed": [
+         "Qotho",
+         "Norvoshi Pit Fighter",
+         "Meereenese Champion"
+      ],
+      "serves": [
+         "Daenerys Targaryen"
+      ],
+      "parents": [
+         "Jeor Mormont"
+      ],
+      "killedBy": [
+         "Wights"
+      ]
+   },
+   {
+      "name": "Jory Cassel",
+      "killedBy": [
+         "Jaime Lannister"
+      ],
+      "serves": [
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Joyeuse Erenford",
+      "killedBy": [
+         "Catelyn Stark"
+      ],
+      "marriedEngaged": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Karl Tanner",
+      "killed": [
+         "Craster"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Karsi",
+      "killedBy": [
+         "Pack of Wights"
+      ],
+      "parentOf": [
+         "Johnna",
+         "Willa"
+      ]
+   },
+   {
+      "name": "Kayla"
+   },
+   {
+      "name": "Kegs",
+      "killedBy": [
+         "Wildling"
+      ]
+   },
+   {
+      "name": "Kevan Lannister",
+      "house": "Lannister",
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "siblings": [
+         "Tywin Lannister"
+      ],
+      "parentOf": [
+         "Lancel Lannister",
+         "Martyn Lannister",
+         "Willem Lannister"
+      ]
+   },
+   {
+      "name": "Khal Drogo",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ],
+      "killed": [
+         "Viserys Targaryen",
+         "Mago"
+      ],
+      "marriedEngaged": [
+         "Daenerys Targaryen"
+      ],
+      "parentOf": [
+         "Rhaego"
+      ]
+   },
+   {
+      "name": "Khal Moro",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Khal Rhalko",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "King Joffrey Baratheon Dwarf"
+   },
+   {
+      "name": "King Renly Baratheon Dwarf"
+   },
+   {
+      "name": "King Robb Stark Dwarf"
+   },
+   {
+      "name": "King Stannis Baratheon Dwarf"
+   },
+   {
+      "name": "King's Landing Rioter #1",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "King's Landing Rioter #2",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "King's Landing Rioter #3",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Kinvara"
+   },
+   {
+      "name": "Kitty Frey",
+      "house": "Frey",
+      "marriedEngaged": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Knight of House Frey"
+   },
+   {
+      "name": "Knight of House Lynderly"
+   },
+   {
+      "name": "Kovarro"
+   },
+   {
+      "name": "Kraznys mo Nakloz",
+      "killedBy": [
+         "Drogon"
+      ]
+   },
+   {
+      "name": "Kurleket",
+      "killedBy": [
+         "Mountain Clansman"
+      ]
+   },
+   {
+      "name": "Lady",
+      "house": "Stark",
+      "killedBy": [
+         "Eddard Stark"
+      ],
+      "siblings": [
+         "Grey Wind",
+         "Nymeria",
+         "Summer",
+         "Shaggydog",
+         "Ghost"
+      ],
+      "guardianOf": [
+         "Sansa Stark"
+      ]
+   },
+   {
+      "name": "Lady Crane",
+      "killedBy": [
+         "The Waif"
+      ]
+   },
+   {
+      "name": "Lancel Lannister",
+      "house": "Lannister",
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "parents": [
+         "Kevan Lannister"
+      ],
+      "siblings": [
+         "Martyn Lannister",
+         "Willem Lannister"
+      ]
+   },
+   {
+      "name": "Lannister Captain"
+   },
+   {
+      "name": "Lannister Captain"
+   },
+   {
+      "name": "Lannister Guardsman"
+   },
+   {
+      "name": "Lannister Messenger"
+   },
+   {
+      "name": "Lannister Scout"
+   },
+   {
+      "name": "Lead Dornish Guard",
+      "killedBy": [
+         "Bronn"
+      ]
+   },
+   {
+      "name": "Leaf",
+      "killedBy": [
+         "Wights"
+      ]
+   },
+   {
+      "name": "Lem Lemoncloak",
+      "killed": [
+         "Brother Ray"
+      ],
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Leo Lefford"
+   },
+   {
+      "name": "Lhara"
+   },
+   {
+      "name": "Little Bird"
+   },
+   {
+      "name": "Little Bird"
+   },
+   {
+      "name": "Little Bird #3"
+   },
+   {
+      "name": "Little Bird #4"
+   },
+   {
+      "name": "Little Bird #5"
+   },
+   {
+      "name": "Little Bird #6"
+   },
+   {
+      "name": "Little Bird #7"
+   },
+   {
+      "name": "Loboda",
+      "killedBy": [
+         "White Walker"
+      ]
+   },
+   {
+      "name": "Locke",
+      "killedBy": [
+         "Hodor"
+      ]
+   },
+   {
+      "name": "Lollys Stokeworth",
+      "marriedEngaged": [
+         "Bronn"
+      ]
+   },
+   {
+      "name": "Lommy Greenhands",
+      "killedBy": [
+         "Polliver"
+      ]
+   },
+   {
+      "name": "Loras Tyrell",
+      "house": "Tyrell",
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "siblings": [
+         "Margaery Tyrell"
+      ],
+      "parents": [
+         "Mace Tyrell"
+      ]
+   },
+   {
+      "name": "Lord Galbart Glover"
+   },
+   {
+      "name": "Lord Portan"
+   },
+   {
+      "name": "Lord Varys",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Lordsport Dockhand"
+   },
+   {
+      "name": "Lothar Frey",
+      "house": "Frey",
+      "killed": [
+         "Talisa Maegyr"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ],
+      "parents": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Loyal Night's Watchman #1"
+   },
+   {
+      "name": "Loyal Night's Watchman #2"
+   },
+   {
+      "name": "Lyanna Mormont",
+      "house": "Mormont",
+      "killedBy": [
+         "Wun Wun"
+      ],
+      "killed": [
+         "Wun Wun"
+      ]
+   },
+   {
+      "name": "Lyanna Stark",
+      "house": "Stark",
+      "parents": [
+         "Rickard Stark"
+      ],
+      "siblings": [
+         "Brandon Stark",
+         "Benjen Stark",
+         "Eddard Stark"
+      ],
+      "marriedEngaged": [
+         "Robert Baratheon",
+         "Rhaegar Targaryen"
+      ],
+      "abductedBy": [
+         "Rhaegar Targaryen"
+      ],
+      "parentOf": [
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Lysa Arryn",
+      "house": [
+         "Arryn",
+         "Tully"
+      ],
+      "killed": [
+         "Jon Arryn"
+      ],
+      "killedBy": [
+         "Petyr Baelish"
+      ],
+      "marriedEngaged": [
+         "Petyr Baelish"
+      ],
+      "parents": [
+         "Hoster Tully"
+      ],
+      "siblings": [
+         "Catelyn Tully",
+         "Edmure Tully"
+      ]
+   },
+   {
+      "name": "Mace Tyrell",
+      "house": "Tyrell",
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "parentOf": [
+         "Margaery Tyrell",
+         "Loras Tyrell"
+      ]
+   },
+   {
+      "name": "Maester Aemon",
+      "house": "Targaryen",
+      "killedBy": [
+         "Old Age"
+      ]
+   },
+   {
+      "name": "Maester Cressen",
+      "killedBy": [
+         "Maester Cressen"
+      ],
+      "killed": [
+         "Maester Cressen"
+      ]
+   },
+   {
+      "name": "Maester Luwin",
+      "killedBy": [
+         "Osha"
+      ]
+   },
+   {
+      "name": "Maester Wolkan"
+   },
+   {
+      "name": "Mag the Mighty",
+      "killedBy": [
+         "Grenn",
+         "Donnel Hill",
+         "Cooper"
+      ],
+      "killed": [
+         "Grenn",
+         "Donnel Hill",
+         "Cooper"
+      ]
+   },
+   {
+      "name": "Maggy"
+   },
+   {
+      "name": "Mago",
+      "killedBy": [
+         "Khal Drogo"
+      ]
+   },
+   {
+      "name": "Male Prostitute"
+   },
+   {
+      "name": "Malko"
+   },
+   {
+      "name": "Mance Rayder",
+      "killedBy": [
+         "Melisandre",
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Mandon Moore",
+      "kingsguard": true,
+      "killedBy": [
+         "Podrick Payne"
+      ]
+   },
+   {
+      "name": "Manservant"
+   },
+   {
+      "name": "Marei"
+   },
+   {
+      "name": "Margaery Tyrell",
+      "house": "Tyrell",
+      "marriedEngaged": [
+         "Renly Baratheon",
+         "Joffrey Baratheon",
+         "Tommen Baratheon"
+      ],
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "siblings": [
+         "Loras Tyrell"
+      ],
+      "parents": [
+         "Mace Tyrell"
+      ]
+   },
+   {
+      "name": "Margaery's Handmaiden"
+   },
+   {
+      "name": "Marillion"
+   },
+   {
+      "name": "Martyn Lannister",
+      "house": "Lannister",
+      "killedBy": [
+         "Rickard Karstark"
+      ],
+      "parents": [
+         "Kevan Lannister"
+      ],
+      "siblings": [
+         "Lancel Lannister",
+         "Willem Lannister"
+      ]
+   },
+   {
+      "name": "Masha Heddle"
+   },
+   {
+      "name": "Matthos Seaworth",
+      "killedBy": [
+         "Bronn"
+      ],
+      "parents": [
+         "Davos Seaworth"
+      ]
+   },
+   {
+      "name": "Meera Reed",
+      "killed": [
+         "Jojen Reed",
+         "White Walker"
+      ],
+      "parents": [
+         "Howland Reed"
+      ]
+   },
+   {
+      "name": "Meereen Slave Master"
+   },
+   {
+      "name": "Melessa Tarly",
+      "marriedEngaged": [
+         "Randyll Tarly"
+      ],
+      "parentOf": [
+         "Dickon Tarly",
+         "Samwell Tarly",
+         "Talla Tarly"
+      ]
+   },
+   {
+      "name": "Melisandre",
+      "killed": [
+         "Renly Baratheon",
+         "Axell Florent",
+         "Mance Rayder",
+         "Shireen Baratheon"
+      ],
+      "killedBy": [
+         "Old Age"
+      ]
+   },
+   {
+      "name": "Merchant Captain",
+      "killedBy": [
+         "Obara Sand"
+      ]
+   },
+   {
+      "name": "Mero",
+      "killedBy": [
+         "Daario Naharis"
+      ]
+   },
+   {
+      "name": "Meryn Trant",
+      "killed": [
+         "Syrio Forel"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Mhaegen"
+   },
+   {
+      "name": "Mikken"
+   },
+   {
+      "name": "Mirelle"
+   },
+   {
+      "name": "Mirri Maz Duur",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ],
+      "killed": [
+         "Rhaego"
+      ]
+   },
+   {
+      "name": "Missandei",
+      "serves": [
+         "Daenerys Targaryen"
+      ],
+      "killedBy": [
+         "Gregor Clegane"
+      ]
+   },
+   {
+      "name": "Mord"
+   },
+   {
+      "name": "Mossador",
+      "killedBy": [
+         "Daario Naharis"
+      ],
+      "killed": [
+         "Son of the Harpy"
+      ]
+   },
+   {
+      "name": "Musician #1"
+   },
+   {
+      "name": "Musician #1"
+   },
+   {
+      "name": "Musician #2"
+   },
+   {
+      "name": "Musician #2"
+   },
+   {
+      "name": "Musician #3"
+   },
+   {
+      "name": "Musician #3"
+   },
+   {
+      "name": "Musician #4"
+   },
+   {
+      "name": "Musician #5"
+   },
+   {
+      "name": "Mycah",
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Myranda",
+      "killedBy": [
+         "Theon Greyjoy"
+      ]
+   },
+   {
+      "name": "Myrcella Baratheon",
+      "house": "Baratheon",
+      "parents": [
+         "Robert Baratheon",
+         "Cersei Lannister",
+         "Jaime Lannister"
+      ],
+      "siblings": [
+         "Joffrey Baratheon",
+         "Tommen Baratheon"
+      ],
+      "royal": true,
+      "killedBy": [
+         "Ellaria Sand"
+      ],
+      "marriedEngaged": [
+         "Trystane Martell"
+      ]
+   },
+   {
+      "name": "Ned Umber",
+      "house": "Umber",
+      "killedBy": [
+         "The Night King"
+      ]
+   },
+   {
+      "name": "Night's Watch Deserter"
+   },
+   {
+      "name": "Night's Watch Messenger"
+   },
+   {
+      "name": "Night's Watch Officer"
+   },
+   {
+      "name": "Night's Watch Officer"
+   },
+   {
+      "name": "Night's Watchman"
+   },
+   {
+      "name": "Night's Watchman"
+   },
+   {
+      "name": "Night's Watchman"
+   },
+   {
+      "name": "Night's Watchman #1"
+   },
+   {
+      "name": "Night's Watchman #2"
+   },
+   {
+      "name": "Night's Watchman #2"
+   },
+   {
+      "name": "Northman Rioter"
+   },
+   {
+      "name": "Nymeria",
+      "house": "Stark",
+      "siblings": [
+         "Grey Wind",
+         "Lady",
+         "Summer",
+         "Shaggydog",
+         "Ghost"
+      ],
+      "guardianOf": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Nymeria Sand",
+      "house": "Martell",
+      "killedBy": [
+         "Euron Greyjoy"
+      ],
+      "parents": [
+         "Oberyn Martell"
+      ]
+   },
+   {
+      "name": "Obara Sand",
+      "house": "Martell",
+      "killed": [
+         "Merchant Captain",
+         "Trystane Martell"
+      ],
+      "killedBy": [
+         "Euron Greyjoy"
+      ],
+      "parents": [
+         "Oberyn Martell"
+      ]
+   },
+   {
+      "name": "Oberyn Martell",
+      "house": "Martell",
+      "killedBy": [
+         "Gregor Clegane"
+      ],
+      "marriedEngaged": [
+         "Ellaria Sand"
+      ],
+      "parentOf": [
+         "Obara Sand",
+         "Nymeria Sand",
+         "Tyene Sand"
+      ],
+      "siblings": [
+         "Doran Martell",
+         "Elia Martell"
+      ]
+   },
+   {
+      "name": "Old Nan"
+   },
+   {
+      "name": "Old Woman Prisoner"
+   },
+   {
+      "name": "Olenna Tyrell",
+      "house": "Tyrell",
+      "killedBy": [
+         "Jaime Lannister"
+      ],
+      "killed": [
+         "Joffrey Baratheon"
+      ],
+      "parentOf": [
+         "Mace Tyrell"
+      ]
+   },
+   {
+      "name": "Olly",
+      "killed": [
+         "Ygritte",
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Olyvar"
+   },
+   {
+      "name": "Orell",
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Ornela"
+   },
+   {
+      "name": "Osha",
+      "killed": [
+         "Drennan",
+         "Maester Luwin"
+      ],
+      "killedBy": [
+         "Ramsay Snow"
+      ]
+   },
+   {
+      "name": "Othell Yarwyck",
+      "killed": [
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Othor",
+      "killedBy": [
+         "White Walker",
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Pentoshi Servant"
+   },
+   {
+      "name": "Petyr Baelish",
+      "nickname": "Littlefinger",
+      "killed": [
+         "Joffrey Baratheon",
+         "Dontos Hollard",
+         "Lysa Arryn"
+      ],
+      "marriedEngaged": [
+         "Lysa Arryn"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Podrick Payne",
+      "kingsguard": true,
+      "killed": [
+         "Mandon Moore",
+         "Bolton Soldier"
+      ],
+      "serves": [
+         "Tyrion Lannister",
+         "Brienne of Tarth",
+         "Bran Stark"
+      ]
+   },
+   {
+      "name": "Polliver",
+      "killed": [
+         "Lommy Greenhands"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Prendahl na Ghezn",
+      "killedBy": [
+         "Daario Naharis"
+      ]
+   },
+   {
+      "name": "Pyat Pree",
+      "killed": [
+         "Spice King",
+         "Silk King"
+      ],
+      "killedBy": [
+         "Drogon",
+         "Viserion",
+         "Rhaegal"
+      ]
+   },
+   {
+      "name": "Pypar",
+      "killedBy": [
+         "Ygritte"
+      ]
+   },
+   {
+      "name": "Qhono"
+   },
+   {
+      "name": "Qhorin Halfhand",
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Qotho",
+      "killedBy": [
+         "Jorah Mormont"
+      ]
+   },
+   {
+      "name": "Quaithe"
+   },
+   {
+      "name": "Qyburn",
+      "serves": [
+         "Cersei Lannister"
+      ],
+      "killedBy": [
+         "Gregor Clegane"
+      ]
+   },
+   {
+      "name": "Rakharo",
+      "killedBy": [
+         "Khal Jhaqo's Khalasar"
+      ]
+   },
+   {
+      "name": "Ramsay Snow",
+      "house": "Bolton",
+      "killed": [
+         "Master Torturer",
+         "Medger Cerwyn",
+         "Lady Cerwyn",
+         "Unidentified Cerwyn",
+         "Old Woman",
+         "Roose Bolton",
+         "Osha",
+         "Rickon Stark",
+         "Wun Wun"
+      ],
+      "marriedEngaged": [
+         "Sansa Stark"
+      ],
+      "killedBy": [
+         "Ramsay Snow's Hounds"
+      ],
+      "parents": [
+         "Roose Bolton"
+      ]
+   },
+   {
+      "name": "Randyll Tarly",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ],
+      "marriedEngaged": [
+         "Melessa Tarly"
+      ],
+      "parentOf": [
+         "Dickon Tarly",
+         "Samwell Tarly",
+         "Talla Tarly"
+      ]
+   },
+   {
+      "name": "Rast",
+      "killed": [
+         "Jeor Mormont"
+      ],
+      "killedBy": [
+         "Ghost"
+      ]
+   },
+   {
+      "name": "Rattleshirt",
+      "nickname": "Lord of Bones",
+      "killedBy": [
+         "Tormund Giantsbane"
+      ]
+   },
+   {
+      "name": "Razdal mo Eraz",
+      "killedBy": [
+         "Grey Worm"
+      ]
+   },
+   {
+      "name": "Red Keep Stableboy",
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Red Priestess"
+   },
+   {
+      "name": "Red Priestess"
+   },
+   {
+      "name": "Renly Baratheon",
+      "house": "Baratheon",
+      "killedBy": [
+         "Melisandre"
+      ],
+      "siblings": [
+         "Robert Baratheon",
+         "Stannis Baratheon"
+      ],
+      "marriedEngaged": [
+         "Margaery Tyrell"
+      ]
+   },
+   {
+      "name": "Rhaegal",
+      "house": "Targaryen",
+      "siblings": [
+         "Drogon",
+         "Viserion"
+      ],
+      "guardianOf": [
+         "Daenerys Targaryen"
+      ],
+      "killed": [
+         "Pyat Pree",
+         "Great Master #1"
+      ],
+      "killedBy": [
+         "Euron Greyjoy"
+      ]
+   },
+   {
+      "name": "Rhaegar Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parents": [
+         "Rhaella Targaryen",
+         "Aerys II Targaryen"
+      ],
+      "siblings": [
+         "Daenerys Targaryen",
+         "Viserys Targaryen"
+      ],
+      "abducted": [
+         "Lyanna Stark"
+      ],
+      "marriedEngaged": [
+         "Elia Martell",
+         "Lyanna Stark"
+      ],
+      "killedBy": [
+         "Robert Baratheon"
+      ],
+      "parentOf": [
+         "Jon Snow",
+         "Rhaenys Targaryen",
+         "Aegon Targaryen"
+      ]
+   },
+   {
+      "name": "Rhaego",
+      "killedBy": [
+         "Mirri Maz Duur"
+      ],
+      "parents": [
+         "Khal Drogo",
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Rhaella Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parentOf": [
+         "Daenerys Targaryen",
+         "Rhaegar Targaryen",
+         "Viserys Targaryen"
+      ],
+      "siblings": [
+         "Aerys II Targaryen"
+      ],
+      "marriedEngaged": [
+         "Aerys II Targaryen"
+      ]
+   },
+   {
+      "name": "Rhaenys Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parents": [
+         "Elia Martell",
+         "Rhaegar Targaryen"
+      ],
+      "siblings": [
+         "Aegon Targaryen",
+         "Jon Snow"
+      ],
+      "killedBy": [
+         "Gregor Clegane"
+      ]
+   },
+   {
+      "name": "Rickard Karstark",
+      "killed": [
+         "Martyn Lannister",
+         "Willem Lannister"
+      ],
+      "killedBy": [
+         "Robb Stark"
+      ],
+      "parentOf": [
+         "Harald Karstark"
+      ]
+   },
+   {
+      "name": "Rickard Stark",
+      "house": "Stark",
+      "parentOf": [
+         "Brandon Stark",
+         "Benjen Stark",
+         "Eddard Stark",
+         "Lyanna Stark"
+      ],
+      "killedBy": [
+         "Aerys II Targaryen"
+      ]
+   },
+   {
+      "name": "Rickon Stark",
+      "house": "Stark",
+      "siblings": [
+         "Robb Stark",
+         "Sansa Stark",
+         "Arya Stark",
+         "Bran Stark"
+      ],
+      "killedBy": [
+         "Ramsay Snow"
+      ],
+      "parents": [
+         "Eddard Stark",
+         "Catelyn Stark"
+      ],
+      "guardedBy": [
+         "Shaggydog"
+      ]
+   },
+   {
+      "name": "Robb Stark",
+      "house": "Stark",
+      "royal": true,
+      "siblings": [
+         "Sansa Stark",
+         "Arya Stark",
+         "Bran Stark",
+         "Rickon Stark"
+      ],
+      "killed": [
+         "Wallen",
+         "Rickard Karstark"
+      ],
+      "marriedEngaged": [
+         "Roslin Frey",
+         "Talisa Maegyr"
+      ],
+      "killedBy": [
+         "Roose Bolton"
+      ],
+      "parents": [
+         "Eddard Stark",
+         "Catelyn Stark"
+      ],
+      "guardedBy": [
+         "Grey Wind"
+      ]
+   },
+   {
+      "name": "Robert Baratheon",
+      "house": "Baratheon",
+      "royal": true,
+      "guardedBy": [
+         "Jon Arryn"
+      ],
+      "marriedEngaged": [
+         "Lyanna Stark",
+         "Cersei Lannister"
+      ],
+      "allies": [
+         "Jon Arryn",
+         "Eddard Stark",
+         "Tywin Lannister"
+      ],
+      "killed": [
+         "Rhaegar Targaryen"
+      ],
+      "parentOf": [
+         "Joffrey Baratheon",
+         "Myrcella Baratheon",
+         "Tommen Baratheon"
+      ],
+      "killedBy": [
+         "Boar"
+      ],
+      "siblings": [
+         "Stannis Baratheon",
+         "Renly Baratheon"
+      ]
+   },
+   {
+      "name": "Robett Glover"
+   },
+   {
+      "name": "Robin Arryn",
+      "parents": [
+         "Jon Arryn",
+         "Lysa Arryn"
+      ]
+   },
+   {
+      "name": "Rodrik Cassel",
+      "killedBy": [
+         "Theon Greyjoy"
+      ],
+      "serves": [
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Roose Bolton",
+      "house": "Bolton",
+      "killed": [
+         "Robb Stark"
+      ],
+      "killedBy": [
+         "Ramsay Snow"
+      ],
+      "parentOf": [
+         "Ramsay Snow"
+      ],
+      "marriedEngaged": [
+         "Walda Bolton"
+      ]
+   },
+   {
+      "name": "Rorge",
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Ros",
+      "killedBy": [
+         "Joffrey Baratheon"
+      ]
+   },
+   {
+      "name": "Roslin Frey",
+      "house": "Frey",
+      "marriedEngaged": [
+         "Robb Stark",
+         "Edmure Tully"
+      ],
+      "parents": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Royal Steward"
+   },
+   {
+      "name": "Ryger Rivers",
+      "parents": [
+         "Walder Frey"
+      ]
+   },
+   {
+      "name": "Salladhor Saan"
+   },
+   {
+      "name": "Samwell Tarly",
+      "killed": [
+         "White Walker",
+         "Thenn Warg"
+      ],
+      "parents": [
+         "Randyll Tarly",
+         "Melessa Tarly"
+      ],
+      "siblings": [
+         "Dickon Tarly",
+         "Talla Tarly"
+      ],
+      "marriedEngaged": [
+         "Gilly"
+      ],
+      "parentOf": [
+         "Baby Sam"
+      ]
+   },
+   {
+      "name": "Sandor Clegane",
+      "nickname": "The Hound",
+      "killed": [
+         "Mycah",
+         "Kings Landing Rioter #1",
+         "Kings Landing Rioter #2",
+         "Kings Landing Rioter #3",
+         "Beric Dondarrion",
+         "Frey Soldier #2",
+         "Lowell",
+         "Dying Man",
+         "Biter",
+         "Steve",
+         "Riddell",
+         "Gatins",
+         "Morgan",
+         "Lem Lemoncloak",
+         "Gregor Clegane",
+         "Sandor Clegane"
+      ],
+      "siblings": [
+         "Gregor Clegane"
+      ],
+      "killedBy": [
+         "Sandor Clegane"
+      ]
+   },
+   {
+      "name": "Sansa Stark",
+      "house": "Stark",
+      "royal": true,
+      "siblings": [
+         "Robb Stark",
+         "Arya Stark",
+         "Bran Stark",
+         "Rickon Stark"
+      ],
+      "marriedEngaged": [
+         "Joffrey Baratheon",
+         "Tyrion Lannister",
+         "Ramsay Snow"
+      ],
+      "guardedBy": [
+         "Lady"
+      ],
+      "parents": [
+         "Eddard Stark",
+         "Catelyn Stark"
+      ]
+   },
+   {
+      "name": "Selyse Baratheon",
+      "house": "Baratheon",
+      "killedBy": [
+         "Selyse Baratheon"
+      ],
+      "killed": [
+         "Selyse Baratheon"
+      ],
+      "marriedEngaged": [
+         "Stannis Baratheon"
+      ],
+      "parentOf": [
+         "Shireen Baratheon"
+      ]
+   },
+   {
+      "name": "Septa Moelle"
+   },
+   {
+      "name": "Septa Mordane",
+      "killedBy": [
+         "Lannister Guardsman"
+      ]
+   },
+   {
+      "name": "Septa Scolera"
+   },
+   {
+      "name": "Septa Unella"
+   },
+   {
+      "name": "Septon"
+   },
+   {
+      "name": "Septon"
+   },
+   {
+      "name": "Ser Endrew Tarth"
+   },
+   {
+      "name": "Shae",
+      "killedBy": [
+         "Tyrion Lannister"
+      ]
+   },
+   {
+      "name": "Shagga"
+   },
+   {
+      "name": "Shaggydog",
+      "house": "Stark",
+      "siblings": [
+         "Grey Wind",
+         "Lady",
+         "Nymeria",
+         "Summer",
+         "Ghost"
+      ],
+      "guardianOf": [
+         "Rickon Stark"
+      ],
+      "killedBy": [
+         "Smalljon Umber"
+      ]
+   },
+   {
+      "name": "Shireen Baratheon",
+      "house": "Baratheon",
+      "killedBy": [
+         "Melisandre"
+      ],
+      "parents": [
+         "Stannis Baratheon",
+         "Selyse Baratheon"
+      ]
+   },
+   {
+      "name": "Silk King",
+      "killedBy": [
+         "Pyat Pree"
+      ]
+   },
+   {
+      "name": "Smalljon Umber",
+      "killed": [
+         "Shaggydog"
+      ],
+      "killedBy": [
+         "Tormund Giantsbane"
+      ],
+      "parents": [
+         "Greatjon Umber"
+      ]
+   },
+   {
+      "name": "Spice King",
+      "killedBy": [
+         "Pyat Pree"
+      ]
+   },
+   {
+      "name": "Stannis Baratheon",
+      "house": "Baratheon",
+      "siblings": [
+         "Robert Baratheon",
+         "Renly Baratheon"
+      ],
+      "killed": [
+         "Gordy",
+         "Simpson"
+      ],
+      "killedBy": [
+         "Brienne of Tarth"
+      ],
+      "marriedEngaged": [
+         "Selyse Baratheon"
+      ],
+      "parentOf": [
+         "Shireen Baratheon"
+      ]
+   },
+   {
+      "name": "Stark Bannerman"
+   },
+   {
+      "name": "Stark Guard"
+   },
+   {
+      "name": "Stark Guard"
+   },
+   {
+      "name": "Stark Guard"
+   },
+   {
+      "name": "Stark Guard"
+   },
+   {
+      "name": "Steelshanks Walton"
+   },
+   {
+      "name": "Stevron Frey",
+      "house": "Frey"
+   },
+   {
+      "name": "Stiv",
+      "killedBy": [
+         "Theon Greyjoy"
+      ]
+   },
+   {
+      "name": "Styr",
+      "killed": [
+         "Olly's Mother"
+      ],
+      "killedBy": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Summer",
+      "house": "Stark",
+      "siblings": [
+         "Grey Wind",
+         "Lady",
+         "Nymeria",
+         "Shaggydog",
+         "Ghost"
+      ],
+      "guardianOf": [
+         "Bran Stark"
+      ],
+      "killed": [
+         "Catspaw Assassin"
+      ],
+      "killedBy": [
+         "Wights"
+      ]
+   },
+   {
+      "name": "Syrio Forel",
+      "killedBy": [
+         "Meryn Trant"
+      ]
+   },
+   {
+      "name": "Talisa Maegyr",
+      "marriedEngaged": [
+         "Robb Stark"
+      ],
+      "killedBy": [
+         "Lothar Frey"
+      ]
+   },
+   {
+      "name": "Talla Tarly",
+      "house": "Tarly",
+      "parents": [
+         "Randyll Tarly",
+         "Melessa Tarly"
+      ],
+      "siblings": [
+         "Dickon Tarly",
+         "Samwell Tarly"
+      ]
+   },
+   {
+      "name": "Ternesio Terys"
+   },
+   {
+      "name": "The Bear"
+   },
+   {
+      "name": "The Night King",
+      "killed": [
+         "Three-Eyed Raven",
+         "Viserion",
+         "Ned Umber",
+         "Theon Greyjoy"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "The Tickler",
+      "killed": [
+         "Tortured Prisoner"
+      ],
+      "killedBy": [
+         "Jaqen H'ghar"
+      ]
+   },
+   {
+      "name": "The Waif",
+      "killed": [
+         "Lady Crane"
+      ],
+      "killedBy": [
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Thenn Warg",
+      "killedBy": [
+         "Samwell Tarly"
+      ]
+   },
+   {
+      "name": "Theon Greyjoy",
+      "house": "Greyjoy",
+      "killed": [
+         "Stiv",
+         "Rodrik Cassel",
+         "Myranda",
+         "Bolton Soldier",
+         "Harrag"
+      ],
+      "siblings": [
+         "Yara Greyjoy"
+      ],
+      "parents": [
+         "Balon Greyjoy"
+      ],
+      "killedBy": [
+         "The Night King"
+      ]
+   },
+   {
+      "name": "Thin Man"
+   },
+   {
+      "name": "Thoros of Myr"
+   },
+   {
+      "name": "Three-Eyed Raven",
+      "killedBy": [
+         "The Night King"
+      ]
+   },
+   {
+      "name": "Timett"
+   },
+   {
+      "name": "Tobho Mott"
+   },
+   {
+      "name": "Todder"
+   },
+   {
+      "name": "Tomard"
+   },
+   {
+      "name": "Tommen Baratheon",
+      "house": "Baratheon",
+      "parents": [
+         "Robert Baratheon",
+         "Cersei Lannister",
+         "Jaime Lannister"
+      ],
+      "siblings": [
+         "Joffrey Baratheon",
+         "Myrcella Baratheon"
+      ],
+      "royal": true,
+      "marriedEngaged": [
+         "Margaery Tyrell"
+      ],
+      "killed": [
+         "Tommen Baratheon"
+      ],
+      "killedBy": [
+         "Tommen Baratheon"
+      ]
+   },
+   {
+      "name": "Tormund Giantsbane",
+      "killed": [
+         "Rattleshirt",
+         "Smalljon Umber"
+      ]
+   },
+   {
+      "name": "Trystane Martell",
+      "house": "Martell",
+      "marriedEngaged": [
+         "Myrcella Baratheon"
+      ],
+      "killedBy": [
+         "Obara Sand"
+      ],
+      "parents": [
+         "Doran Martell"
+      ]
+   },
+   {
+      "name": "Tycho Nestoris"
+   },
+   {
+      "name": "Tyene Sand",
+      "house": "Martell",
+      "killed": [
+         "Areo Hotah",
+         "Maester Caleotte"
+      ],
+      "killedBy": [
+         "Cersei Lannister"
+      ],
+      "parents": [
+         "Oberyn Martell",
+         "Ellaria Sand"
+      ]
+   },
+   {
+      "name": "Tyrion Lannister",
+      "house": "Lannister",
+      "marriedEngaged": [
+         "Sansa Stark"
+      ],
+      "killed": [
+         "Shae",
+         "Tywin Lannister"
+      ],
+      "parents": [
+         "Tywin Lannister"
+      ],
+      "siblings": [
+         "Cersei Lannister",
+         "Jaime Lannister"
+      ],
+      "serves": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Tywin Lannister",
+      "house": "Lannister",
+      "parentOf": [
+         "Jaime Lannister",
+         "Cersei Lannister",
+         "Tyrion Lannister"
+      ],
+      "allies": [
+         "Robert Baratheon"
+      ],
+      "servedBy": [
+         "Gregor Clegane"
+      ],
+      "killedBy": [
+         "Tyrion Lannister"
+      ]
+   },
+   {
+      "name": "Vala"
+   },
+   {
+      "name": "Vardis Egen",
+      "killedBy": [
+         "Bronn"
+      ]
+   },
+   {
+      "name": "Varly",
+      "killedBy": [
+         "Goldcloak"
+      ]
+   },
+   {
+      "name": "Viserion",
+      "house": "Targaryen",
+      "siblings": [
+         "Drogon",
+         "Rhaegal"
+      ],
+      "guardianOf": [
+         "Daenerys Targaryen"
+      ],
+      "killed": [
+         "Pyat Pree",
+         "Great Master #1"
+      ],
+      "killedBy": [
+         "The Night King",
+         "Arya Stark"
+      ]
+   },
+   {
+      "name": "Viserys Targaryen",
+      "house": "Targaryen",
+      "royal": true,
+      "parents": [
+         "Rhaella Targaryen",
+         "Aerys II Targaryen"
+      ],
+      "siblings": [
+         "Daenerys Targaryen",
+         "Rhaegar Targaryen"
+      ],
+      "killedBy": [
+         "Khal Drogo"
+      ]
+   },
+   {
+      "name": "Walda Bolton",
+      "house": [
+         "Bolton",
+         "Frey"
+      ],
+      "killedBy": [
+         "Ramsay Snow's Hounds"
+      ],
+      "marriedEngaged": [
+         "Roose Bolton"
+      ]
+   },
+   {
+      "name": "Walder Frey",
+      "house": "Frey",
+      "killedBy": [
+         "Arya Stark"
+      ],
+      "parentOf": [
+         "Black Walder Rivers",
+         "Lothar Frey",
+         "Roslin Frey",
+         "Ryger Rivers"
+      ],
+      "marriedEngaged": [
+         "Joyeuse Erenford",
+         "Kitty Frey"
+      ]
+   },
+   {
+      "name": "Wallen",
+      "killedBy": [
+         "Robb Stark"
+      ]
+   },
+   {
+      "name": "Warlock"
+   },
+   {
+      "name": "Waymar Royce",
+      "killedBy": [
+         "White Walker"
+      ],
+      "parents": [
+         "Yohn Royce"
+      ]
+   },
+   {
+      "name": "Wedding Band"
+   },
+   {
+      "name": "White Walker"
+   },
+   {
+      "name": "White Walker",
+      "killedBy": [
+         "Samwell Tarly"
+      ]
+   },
+   {
+      "name": "White Walker",
+      "killedBy": [
+         "Jon Snow"
+      ],
+      "killed": [
+         "Loboda"
+      ]
+   },
+   {
+      "name": "White Walker #2"
+   },
+   {
+      "name": "Wight Wildling Girl"
+   },
+   {
+      "name": "Wildling Rioter"
+   },
+   {
+      "name": "Will",
+      "killedBy": [
+         "Eddard Stark"
+      ]
+   },
+   {
+      "name": "Willem Lannister",
+      "house": "Lannister",
+      "killedBy": [
+         "Rickard Karstark"
+      ],
+      "parents": [
+         "Kevan Lannister"
+      ],
+      "siblings": [
+         "Lancel Lannister",
+         "Martyn Lannister"
+      ]
+   },
+   {
+      "name": "Willis Wode",
+      "killedBy": [
+         "Mountain Clansman"
+      ]
+   },
+   {
+      "name": "Wine Merchant"
+   },
+   {
+      "name": "Winterfell Shepherd"
+   },
+   {
+      "name": "Wun Wun",
+      "killedBy": [
+         "Ramsay Snow",
+         "Lyanna Mormont"
+      ],
+      "killed": [
+         "Lyanna Mormont"
+      ]
+   },
+   {
+      "name": "Wyllis"
+   },
+   {
+      "name": "Xaro Xhoan Daxos",
+      "killedBy": [
+         "Daenerys Targaryen"
+      ]
+   },
+   {
+      "name": "Yara Greyjoy",
+      "house": "Greyjoy",
+      "parents": [
+         "Balon Greyjoy"
+      ],
+      "siblings": [
+         "Theon Greyjoy"
+      ]
+   },
+   {
+      "name": "Yezzan zo Qaggaz"
+   },
+   {
+      "name": "Ygritte",
+      "killed": [
+         "Old Man",
+         "Guymon",
+         "Mole's Town Whore",
+         "Pypar"
+      ],
+      "killedBy": [
+         "Olly"
+      ],
+      "marriedEngaged": [
+         "Jon Snow"
+      ]
+   },
+   {
+      "name": "Yohn Royce",
+      "parentOf": [
+         "Waymar Royce"
+      ]
+   },
+   {
+      "name": "Yoren",
+      "killedBy": [
+         "Amory Lorch"
+      ]
+   },
+   {
+      "name": "Zanrush"
+   }
+]
