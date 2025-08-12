@@ -47,6 +47,8 @@ class GraphLoader:
                     add_family_connections(character, house)
         
         return houses
+    
+    
     @staticmethod
     def load_relationships(filename="data.json") -> Graph:
         # load characters from json file
@@ -57,42 +59,54 @@ class GraphLoader:
         # create the dict containing all the graphs
         graph : Graph[Node] = Graph()
 
+        nodes : dict[str, Node] = {}
         # add all characters to his house graph
         for character in characters:
-            graph.add(Node(character.name, random() * 300 + 200, random() * 200 + 140))
+            node = Node(character.name, random() * 300 + 200, random() * 200 + 140)
+            nodes[character.name] = node
+            graph.add(node)
 
         # add connections between characters
         for character in characters:
             for sibling in character.siblings:
-                graph.connect(character.name, sibling, 1)
+                if sibling in nodes:
+                    graph.connect(nodes[character.name], nodes[sibling], 1)
             for parent in character.parents:
-                graph.connect(character.name, parent, 1)
+                if parent in nodes:
+                    graph.connect(nodes[character.name], nodes[parent], 1)
             for guardian in character.guardedBy:
-                graph.connect(character.name, guardian, 1)
+                if guardian in nodes:
+                    graph.connect(nodes[character.name], nodes[guardian], 1)
             for guarded in character.guardianOf:
-                graph.connect(character.name, guarded, 1)
+                if guarded in nodes:
+                    graph.connect(nodes[character.name], nodes[guarded], 1)
             for partner in character.marriedEngaged:
-                graph.connect(character.name, partner, 1)
+                if partner in nodes:
+                    graph.connect(nodes[character.name], nodes[partner], 1)
             
             for ally in character.allies:
-                graph.connect(character.name, ally, 3)
+                if ally in nodes:
+                    graph.connect(nodes[character.name], nodes[ally], 3)
             
             for servant in character.servedBy:
-                graph.connect(character.name, servant, 5)
+                if servant in nodes:
+                    graph.connect(nodes[character.name], nodes[servant], 5)
             for master in character.serves:
-                graph.connect(character.name, master, 5)
+                if master in nodes:
+                    graph.connect(nodes[character.name], nodes[master], 5)
             
             for victim in character.abducted:
-                graph.connect(character.name, victim, 15)
+                if victim in nodes:
+                    graph.connect(nodes[character.name], nodes[victim], 15)
             for kidnapper in character.abductedBy:
-                graph.connect(character.name, kidnapper, 15)
+                if kidnapper in nodes:
+                    graph.connect(nodes[character.name], nodes[kidnapper], 15)
             
             for victim in character.killed:
-                graph.connect(character.name, victim, 40)
+                if victim in nodes:
+                    graph.connect(nodes[character.name], nodes[victim], 40)
             for killer in character.killedBy:
-                graph.connect(character.name, killer, 40)
-            
+                if killer in nodes:
+                    graph.connect(nodes[character.name], nodes[killer], 40)
         
         return graph
-        
-        

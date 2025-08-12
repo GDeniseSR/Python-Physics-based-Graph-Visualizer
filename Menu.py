@@ -1,5 +1,5 @@
 import GraphDrawer
-from GraphLoader import GraphLoader
+from DataLoader import GraphLoader
 from Graph import Graph, Order
 from os import system
 import math
@@ -7,7 +7,7 @@ import cProfile, pstats
 
 
 if __name__ == "__main__":
-    N = 30
+    N = 50
     graph = GraphLoader.load_relationships()
     n = len(graph.vertices)
     print(n)

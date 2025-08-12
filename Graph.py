@@ -10,18 +10,22 @@ class Order(Enum):
     WIDTH = 2
 
 class Graph[T]:
-    def __init__(self: typing.Self, vertices: set[T] = set(), edges: set[tuple[T, T, float]] = set()):
-        self.__vertices: list[T] = list(vertices)
-        self.__matrix: list[list[float | bool]] = [
-            [False for _ in range(len(vertices))] for _ in range(len(vertices)) 
-        ]
+    def __init__(self: typing.Self, vertices: set[T] = None, edges: set[tuple[T, T, float]] = None):
+        if vertices == None:
+            vertices = []
+        if edges == None:
+            edges = []
+        
+        self.__adj : dict[T, dict[T, float | bool]] = {}
+        for v in vertices:
+            self.__adj[v] = {}
         
         for source, target, weight in edges:
-            self.__matrix[self.__vertices.index(source)][self.__vertices.index(target)] = weight
+            self.__adj[source][target] = weight
         
         self.__version = 0
         self.__cache : dict[str, tuple[str, int]] = {}
-
+    
     def versioned_cache(key):
         def decorator(func):
             wraps(func)
@@ -39,47 +43,47 @@ class Graph[T]:
     
     
     ### Full graph methods ##########################################
+    def __set_adjacency_dict(self, adj : dict[T, dict[T, float | bool]]):
+        self.__adj = adj
+        self.__change()
+        return self
+    
     def copy(self):
-        matrix_copy = [row.copy() for row in self.__matrix]
-        return Graph(self.vertices).__set_adjacency_matrix(matrix_copy)
+        adj_copy = {v : self.__adj[v].copy() for v in self.__adj.keys()}
+        return Graph(self.vertices).__set_adjacency_dict(adj_copy)
     
     def get_subgraph(self, vertices : set[T]) -> Graph[T]:
-        edges = [(v, u, self.__matrix[i][j]) for i, v in enumerate(self.__vertices) for j, u in enumerate(self.__vertices)
-                 if v in vertices and u in vertices]
-        return Graph(vertices, edges)
+        new_adj = {}
+        for v in vertices:
+            new_adj[v] = {v2 : w for v2, w in self.__adj[v].items() if v2 in vertices}
+                
+        return Graph(vertices).__set_adjacency_dict(new_adj)
     
     @property
     @versioned_cache("reverse_graph")
     def reverse_graph(self) -> Graph[T]:
-        reverse_edges = set()
-        for i in range(len(self.__matrix)):
-            for j in range(len(self.__matrix[i])):
-                if self.__matrix[i][j] is not False:
-                    reverse_edge  = (self.__vertices[j], self.__vertices[i], self.__matrix[i][j])
-                    reverse_edges.add(reverse_edge)
+        reverse_adj = {v : {} for v in self.__adj.keys()}
         
-        reverse_graph = Graph(self.vertices, reverse_edges)
+        for v1 in self.__adj.keys():
+            for v2 in self.__adj[v1].keys():
+                reverse_adj[v2][v1] = self.__adj[v1][v2]
+        
+        reverse_graph = Graph(self.vertices).__set_adjacency_dict(reverse_adj)
         return reverse_graph
     
     
     ### Vertex methods ##########################################
-    
     @property
+    @versioned_cache("vertices")
     def vertices(self):
-        return self.__vertices.copy()    
+        return tuple(self.__adj.keys())
     
     def contains(self: typing.Self, vertex: T) -> bool: 
-        return vertex in self.__vertices
+        return vertex in self.__adj
 
     def add(self: typing.Self, vertex: T) -> Graph[T]: 
         if not self.contains(vertex):
-            #add the vertex
-            self.__vertices.append(vertex)
-            # add a new False to each row
-            for row in self.__matrix:
-                row.append(False)
-            # add a new row for the new vertex
-            self.__matrix.append([False for _ in range(len(self.__vertices))])
+            self.__adj[vertex] = {}
 
         self.__change()
         
@@ -87,80 +91,57 @@ class Graph[T]:
 
     def remove(self: typing.Self, vertex: T) -> Graph[T]: 
         if self.contains(vertex):
-            index = self.__vertices.index(vertex)
-            # remove the vertex 
-            del self.__vertices[index]
-            # remove from each row
-            for row in self.__matrix:
-                del row[index]
-            # remove the row for the vertex
-            del self.__matrix[index]
-
+            self.__adj.pop(vertex)
+            
+            for v in self.__adj:
+                self.__adj[v].pop(vertex, None)
+        
         self.__change()
         
         return self
         
     def adjacent_vertices(self: typing.Self, vertex: T) -> set[T]: 
-        index = self.__vertices.index(vertex)
-        vertices = set()
-
-        for i in range(len(self.__matrix[index])):
-            # check in the vertex row every column
-            if self.__matrix[index][i] is not False:
-                vertices.add(self.__vertices[i])
-
-        return vertices
+        return self.__adj[vertex].keys()
     
     def predecessors(self: typing.Self, vertex: T) -> set[T]: 
-        index = self.__vertices.index(vertex)
-        vertices = set()
-        
-        for i in range(len(self.__matrix[index])):
-            # check in the vertex row every column
-            if self.__matrix[i][index] is not False:
-                vertices.add(self.__vertices[i])
-
-        return vertices
+        return self.reverse_graph.__adj[vertex].keys()
     
     
     ### Connection methods ##########################################
     
-    def __set_adjacency_matrix(self, matrix : list[list[float | bool]]):
-        self.__matrix = matrix
-        self.__change()
-        return self
-    
     def connected(self: typing.Self, source: T, target: T) -> bool: 
-        return self.__matrix[self.__vertices.index(source)][self.__vertices.index(target)] is not False
+        return target in self.__adj[source]
 
     def get_connection_weight(self: typing.Self, source: T, target: T) -> float | bool: 
-        return self.__matrix[self.__vertices.index(source)][self.__vertices.index(target)]
+        return self.__adj[source][target]
     
-    def connect(self: typing.Self, source: T, target: T, weight: float) -> Graph[T]: 
+    def connect(self: typing.Self, source: T, target: T, weight: float|bool) -> Graph[T]: 
         if self.contains(source) and self.contains(target):
-            self.__matrix[self.__vertices.index(source)][self.__vertices.index(target)] = weight
+            self.__adj[source][target] = weight
             self.__change()
 
         return self
 
     def disconnect(self: typing.Self, source: T, target: T) -> Graph[T]: 
         if self.contains(source) and self.contains(target):
-            self.__matrix[self.__vertices.index(source)][self.__vertices.index(target)] = False
-            self.__change()
+            self.__adj[source].pop(target)
             
         return self
 
     @property
     @versioned_cache("is_directed")
     def is_directed(self):
-        val = False
+        directed = False
         # Check symmetry
-        for i in range(len(self.__matrix)):
-            for j in range(i, len(self.__matrix)):  # Only need to check upper half
-                if self.__matrix[i][j] != self.__matrix[j][i]:
-                    val = True
-        
-        return val
+        for v1 in self.vertices:
+            for v2 in self.vertices:
+                a = v2 in self.__adj[v1] 
+                b = v1 in self.__adj[v2]
+                if a != b:
+                    directed = True
+                    break
+                
+        return directed
     
     
     ### Component methods ##########################################
@@ -168,10 +149,10 @@ class Graph[T]:
     @property
     @versioned_cache("is_connected")
     def is_connected(self) -> bool:
-        start = self.__vertices[0]
+        start = self.vertices[0]
         visited = self.travel_connected_component(start, order=Order.DEPTH)
 
-        return len(visited) == len(self.__vertices)
+        return len(visited) == len(self.vertices)
 
 
     def travel_connected_component(self, start: T, order: Order):
@@ -217,11 +198,11 @@ class Graph[T]:
         return visited
     
     def travel_full_graph(self, start: T, order: Order) -> list[T]:
-        if start not in self.__vertices:
+        if not self.contains(start):
             raise(f"There is no vertex {start} in the graph")
 
         visited : list[T] = []
-        remaining_vertices = set(self.__vertices)  # Create a set of unvisited vertices
+        remaining_vertices = set(self.vertices)  # Create a set of unvisited vertices
         
         while remaining_vertices:
             if len(visited) > 0:
@@ -247,7 +228,7 @@ class Graph[T]:
         """
         
         connected_components: list[list[T]] = []
-        remaining_vertices = set(self.__vertices)  # Create a set of unvisited vertices
+        remaining_vertices = set(self.vertices)  # Create a set of unvisited vertices
         
         while remaining_vertices:
             start = remaining_vertices.pop()  # Pick any vertex from remaining vertices
@@ -411,10 +392,10 @@ class Graph[T]:
 
     
     def dijkstra(self, source : T):
-        pending = self.vertices
+        pending = list(self.vertices)
 
-        distances : dict[T, float] = {v : math.inf for v in self.__vertices}
-        paths : dict[T, list[T]] = {v : [] for v in self.__vertices}
+        distances : dict[T, float] = {v : math.inf for v in self.__adj}
+        paths : dict[T, list[T]] = {v : [] for v in self.__adj}
         
         distances[source] = 0
         paths[source] = [source]
@@ -440,13 +421,13 @@ class Graph[T]:
     
     def __str__(self: typing.Self) -> str:
         result = ""
-        max_len_key = max(len(str(vertex)) for vertex in self.__vertices)
+        max_len_key = max(len(str(vertex)) for vertex in self.__adj)
         max_len_val = max(len(str(v)) for r in self.__matrix for v in r )
         max_len = max(max_len_key, max_len_val)
 
-        result = result + f"{' ' * max_len} {' '.join([str(vertex).rjust(max_len) for vertex in self.__vertices])}\n"
+        result = result + f"{' ' * max_len} {' '.join([str(vertex).rjust(max_len) for vertex in self.__adj])}\n"
         
-        for i in range(len(self.__vertices)):
-            result = result + f"{str(self.__vertices[i]).rjust(max_len)} {' '.join([str(j).rjust(max_len) for j in self.__matrix[i]])}\n"
+        for i in range(len(self.__adj)):
+            result = result + f"{str(self.__adj[i]).rjust(max_len)} {' '.join([str(j).rjust(max_len) for j in self.__matrix[i]])}\n"
 
         return result

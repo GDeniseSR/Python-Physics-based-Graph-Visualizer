@@ -118,7 +118,7 @@ def start(graph:Graph[Node]):
                 # Checks if the right mouse button is pressed and the mouse is moving, to break any edge the mouse crosses
                 if input.is_pressed(RIGHT_MOUSE_BUTTON):
                     for n1 in graph.vertices:
-                        for n2 in graph.adjacent_vertices(n1):
+                        for n2 in list(graph.adjacent_vertices(n1)):
                             cut_edge = Collisions.lines_intersect(camera.screen_to_world(input.last_mouse_pos),
                                                        camera.screen_to_world(input.mouse_pos),
                                                        n1.pos, n2.pos)
