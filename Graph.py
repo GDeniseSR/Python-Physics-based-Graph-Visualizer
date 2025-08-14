@@ -62,9 +62,9 @@ class Graph[T]:
     def reverse_graph(self) -> Graph[T]:
         reverse_adj = {v : {} for v in self.__adj.keys()}
         
-        for v1 in self.__adj.keys():
-            for v2 in self.__adj[v1].keys():
-                reverse_adj[v2][v1] = self.__adj[v1][v2]
+        for v1, neighbours in self.__adj.items():
+            for v2, w in neighbours.items():
+                reverse_adj[v2][v1] = w
         
         reverse_graph = Graph(reverse_adj)
         
