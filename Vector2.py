@@ -22,7 +22,8 @@ class Vector2:
     
     @property
     def magnitude(self):
-        return sqrt(self.x**2 + self.y**2)
+        return sqrt(self.x*self.x + self.y*self.y)
+    
     def dot(self, other:'Vector2') -> 'Vector2':
         return self.x * other.x + self.y * other.y
     def rotated(self, angle:float):
@@ -96,7 +97,11 @@ class Vector2:
         return Vector2(self.x, self.y)
     
     def __sub__(self, other) -> 'Vector2':
-        return self.__add__(-other)
+        if isinstance(other, Vector2):
+            return Vector2(self.x - other.x, self.y - other.y)
+        else:
+            raise(TypeError("unsupported operand type(s)"))
+    
     def __isub__(self, other):
         return self.__sub__(other)
     

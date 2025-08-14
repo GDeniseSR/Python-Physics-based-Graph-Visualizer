@@ -4,27 +4,25 @@ from collections import deque
 from functools import wraps
 from enum import Enum
 import math
+import time
 
 class Order(Enum):
     DEPTH = 1,
     WIDTH = 2
 
 class Graph[T]:
-    def __init__(self: typing.Self, vertices: set[T] = None, edges: set[tuple[T, T, float]] = None):
-        if vertices == None:
-            vertices = []
-        if edges == None:
-            edges = []
+    def __init__(self: typing.Self, adjacency_dict : dict[T, dict[T, float | bool]] = None, debug_log=False):
+        if adjacency_dict == None:
+            adjacency_dict = {}
         
         self.__adj : dict[T, dict[T, float | bool]] = {}
-        for v in vertices:
-            self.__adj[v] = {}
-        
-        for source, target, weight in edges:
-            self.__adj[source][target] = weight
+        for v, neighbours in adjacency_dict.items():
+            self.__adj[v] = neighbours.copy()
         
         self.__version = 0
         self.__cache : dict[str, tuple[str, int]] = {}
+        
+        self.debug_log=debug_log
     
     def versioned_cache(key):
         def decorator(func):
@@ -32,32 +30,32 @@ class Graph[T]:
             def wrapper(self:typing.Self, *args, **kwargs):
                 val, version = self.__cache.get(key, (None, -1))
                 if version != self.__version:
+                    start = time.perf_counter()
                     val = func(self, *args, **kwargs)
+                    end = time.perf_counter()
+                    if self.debug_log:
+                        print(f"Func: '{func.__name__}' took {end-start} seconds")
                     self.__cache[key] = (val, self.__version)
                 return val
             return wrapper
         return decorator
     
-    def __change(self):
+    def _change(self):
+        if self.debug_log:
+            print(f"Change: version = {self.__version} -------------")
         self.__version += 1
     
     
     ### Full graph methods ##########################################
-    def __set_adjacency_dict(self, adj : dict[T, dict[T, float | bool]]):
-        self.__adj = adj
-        self.__change()
-        return self
-    
     def copy(self):
-        adj_copy = {v : self.__adj[v].copy() for v in self.__adj.keys()}
-        return Graph(self.vertices).__set_adjacency_dict(adj_copy)
+        return Graph(self.__adj)
     
     def get_subgraph(self, vertices : set[T]) -> Graph[T]:
         new_adj = {}
         for v in vertices:
             new_adj[v] = {v2 : w for v2, w in self.__adj[v].items() if v2 in vertices}
                 
-        return Graph(vertices).__set_adjacency_dict(new_adj)
+        return Graph(new_adj)
     
     @property
     @versioned_cache("reverse_graph")
@@ -68,7 +66,8 @@ class Graph[T]:
             for v2 in self.__adj[v1].keys():
                 reverse_adj[v2][v1] = self.__adj[v1][v2]
         
-        reverse_graph = Graph(self.vertices).__set_adjacency_dict(reverse_adj)
+        reverse_graph = Graph(reverse_adj)
+        
         return reverse_graph
     
     
@@ -85,7 +84,7 @@ class Graph[T]:
         if not self.contains(vertex):
             self.__adj[vertex] = {}
 
-        self.__change()
+            self._change()
         
         return self
 
@@ -96,7 +95,7 @@ class Graph[T]:
             for v in self.__adj:
                 self.__adj[v].pop(vertex, None)
         
-        self.__change()
+            self._change()
         
         return self
         
@@ -118,30 +117,26 @@ class Graph[T]:
     def connect(self: typing.Self, source: T, target: T, weight: float|bool) -> Graph[T]: 
         if self.contains(source) and self.contains(target):
             self.__adj[source][target] = weight
-            self.__change()
+            self._change()
 
         return self
 
     def disconnect(self: typing.Self, source: T, target: T) -> Graph[T]: 
         if self.contains(source) and self.contains(target):
             self.__adj[source].pop(target)
-            
+            self._change()
         return self
 
     @property
     @versioned_cache("is_directed")
     def is_directed(self):
-        directed = False
         # Check symmetry
-        for v1 in self.vertices:
-            for v2 in self.vertices:
-                a = v2 in self.__adj[v1] 
-                b = v1 in self.__adj[v2]
-                if a != b:
-                    directed = True
-                    break
+        for v1, neighboors in self.__adj.items():
+            for v2, w in neighboors.items():
+                if v1 in self.__adj[v2] and self.__adj[v2][v1] == w:
+                    return True
                 
-        return directed
+        return False
     
     
     ### Component methods ##########################################
@@ -333,12 +328,13 @@ class Graph[T]:
         dom : set[T] = set()
         
         for component in strongly_connected_components:
-            new_dominators = self.get_component_dominators(component, len(strongly_connected_components))
-            dom.update(new_dominators)
+            if len(component) > 2:
+                new_dominators = self.get_component_dominators(component)
+                dom.update(new_dominators)
 
         return dom
 
-    def get_component_dominators(self, component_by_depth : list[T], connected_component_number) -> set[T]:
+    def get_component_dominators(self, component_by_depth : list[T]) -> set[T]:
         """
         We remove the trivial dominators from the set obtained with 'calculate_dominators'.
         That is, for every vertex's dominator list, we remove the start vertex and itself.
@@ -358,9 +354,10 @@ class Graph[T]:
         for v in dom:
             dominators.update(dom[v])
 
-        copy = self.copy()
-        copy.remove(start)
-        if len(copy.connected_components) > connected_component_number:
+        # For the start vertex, we must check it manually
+        subgraph = self.get_subgraph(component_by_depth)
+        subgraph.remove(start)
+        if len(subgraph.connected_components) > 1:
             dominators.add(start)
         
         return dominators

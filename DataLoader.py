@@ -5,7 +5,7 @@ from collections import defaultdict
 from Node import Node
 from random import random
 
-class GraphLoader:
+class DataLoader:
     @staticmethod
     def load_houses(filename="data.json") -> dict[str, Graph]:
         def add_family_connections(character:Character, house):
@@ -57,7 +57,7 @@ class GraphLoader:
             characters = json.load(file, object_hook=lambda data: Character(**data))
 
         # create the dict containing all the graphs
-        graph : Graph[Node] = Graph()
+        graph : Graph[Node] = Graph(debug_log=True)
 
         nodes : dict[str, Node] = {}
         # add all characters to his house graph

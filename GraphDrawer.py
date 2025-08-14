@@ -56,7 +56,7 @@ def start(graph:Graph[Node]):
     # Set the dimensions of the window
     screen = pygame.display.set_mode((800, 600), pygame.RESIZABLE)
     # Set the title of the window
-    pygame.display.set_caption("Grafo")
+    pygame.display.set_caption("Graph")
 
     # Camera
     camera = Camera()
@@ -77,7 +77,7 @@ def start(graph:Graph[Node]):
 
     # Input management
     LEFT_MOUSE_BUTTON = 1
-    MIDDLE_MOUSE_BUTTON = 3
+    MIDDLE_MOUSE_BUTTON = 2
     RIGHT_MOUSE_BUTTON = 3
     input = Input()
 
@@ -126,11 +126,12 @@ def start(graph:Graph[Node]):
                                 graph.disconnect(n1, n2)
                 
             elif event.type == pygame.MOUSEWHEEL:
-                camera.zoom_level += event.y * 5 * delta_time
+                camera.zoom_level += event.y * 3 * delta_time
         
         # Smoothly move the camera towards the desired position using linear interpolation (lerp)
         lerp_speed = 20
-        camera.position += (desired_position - camera.position) * lerp_speed * delta_time
+        t = lerp_speed * delta_time
+        camera.position += (desired_position - camera.position) * min(t, 1)
         
         GraphPhysics.apply_node_forces(graph, input, camera, left_click_drag_node, delta_time)
 
