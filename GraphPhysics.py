@@ -5,8 +5,8 @@ from Camera import Camera
 
 def apply_node_forces(graph : Graph[Node], input : Input, camera : Camera, selected_node : Node, delta_time : float):
     spring_length = 100
-    spring_force = 0.4
-    repulsion_strength = 12000
+    spring_force = 0.8
+    repulsion_strength = 25
     follow_mouse_strenght = 3
     follow_mouse_max_distance = 50
     
@@ -29,11 +29,12 @@ def apply_node_forces(graph : Graph[Node], input : Input, camera : Camera, selec
                 force_vector = force * diff / dist
                 n1.pos += force_vector * delta_time
         
+        # Connected nodes attract each other
         for n2 in graph.adjacent_vertices(n1):
             diff = n2.pos - n1.pos
             dist = diff.magnitude
             
-            force = (diff.magnitude - spring_length) * 2 * spring_force # Spring force
+            force = (diff.magnitude - spring_length) * spring_force / 2 # Spring force
             force = min(force, 1000)
             
             if diff.magnitude > spring_length:
@@ -48,7 +49,7 @@ def apply_node_forces(graph : Graph[Node], input : Input, camera : Camera, selec
 
             # Repulsion between all nodes            
             if dist > 0 and dist < 200:  # Only apply repulsion within a certain range
-                force = repulsion_strength / (dist * dist) # Repulsion force
+                force = 1000 * repulsion_strength / (dist * dist) # Repulsion force
                 force = min(force, 1000)
                 
                 force_vector = - force * diff / dist

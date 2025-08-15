@@ -24,6 +24,19 @@ class Vector2:
     def magnitude(self):
         return sqrt(self.x*self.x + self.y*self.y)
     
+    @property
+    def normalized(self):
+        magnitude = sqrt(self.x*self.x + self.y*self.y)
+        if magnitude != 0:
+            return self / magnitude
+        else:
+            return Vector2.ZERO
+    
+    def normalize(self):
+        magnitude = sqrt(self.x*self.x + self.y*self.y)
+        self.x /= magnitude
+        self.y /= magnitude
+    
     def dot(self, other:'Vector2') -> 'Vector2':
         return self.x * other.x + self.y * other.y
     def rotated(self, angle:float):
@@ -53,7 +66,7 @@ class Vector2:
     def down(self):
         return Vector2(-self.x, -self.y)
     
-    def clamp_magnitude(self, n_max) -> 'Vector2':
+    def clamp_magnitude(self, n_max):
         n = self.magnitude
         if n > 0:
             f = min(1, n_max / n)

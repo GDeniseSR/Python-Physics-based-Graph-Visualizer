@@ -1,9 +1,13 @@
 import pygame
+from pygame.surface import Surface
+import colorsys
+
+import DrawArrow
+
 from Graph import *
 from Input import *
 from Node import *
 from Vector2 import Vector2
-import math
 from Camera import Camera
 import GraphPhysics
 import Collisions
@@ -14,7 +18,23 @@ def collides_with_any_node(x, y, graph : Graph, distance = 0):
             return node
     return None
 
-def start(graph:Graph[Node]):
+
+component_colors : list[tuple[int, int, int]] = []
+_hue = 0.0  # starting hue
+_GOLDEN_RATIO_CONJUGATE = 0.61803398
+
+def generate_colors(n: int = 1):
+    global _hue, _GOLDEN_RATIO_CONJUGATE
+    for _ in range(n):
+        _hue = (_hue + _GOLDEN_RATIO_CONJUGATE) % 1.0
+        r, g, b = colorsys.hsv_to_rgb(_hue, 0.65, 0.95)
+        
+        color = (int(r * 255), int(g * 255), int(b * 255))
+        component_colors.append(color)
+        
+text_surfaces : dict[Node, Surface] = {}
+
+def main(graph:Graph[Node]):
     def on_left_press():
         nonlocal graph, input, left_click_drag_node, node_radius
         
@@ -48,7 +68,6 @@ def start(graph:Graph[Node]):
             end_node = collides_with_any_node(*end_pos, graph, node_radius)
             if end_node != None and left_click_drag_node != end_node:
                 graph.connect(left_click_drag_node, end_node, 1)
-                graph.connect(end_node, left_click_drag_node, 1)
     
     
     # Initialize Pygame
@@ -147,14 +166,17 @@ def start(graph:Graph[Node]):
 def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radius:int, left_drag_start_node:Node):
     # Define colors (RGB)
     WHITE = (255, 255, 255)
-    RED = (255, 0, 0)
-    BLUE = (0, 0, 255)
-    GREEN = (0, 255, 0)
+    RED = (255, 40, 40)
+    BLUE = (40, 40, 255)
+
     # Initialize font (using default font with size 24)
     font_size = 24
 
     # Fill the screen with white color (clears previous frame)
     screen.fill(WHITE)    
+    
+    node_radius_pixels = node_radius * camera.zoom_level
+    arrow_head_length_pixels = 15 * camera.zoom_level
     
     # Update the start of the dragging line point if it's dragging a node and draw said line
     if input.is_long_pressed(1):
@@ -163,29 +185,65 @@ def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radiu
         else:
             start_pos = input.get_button(1).start_mouse_pos
         
-        pygame.draw.line(screen, BLUE, tuple(start_pos), tuple(input.mouse_pos), width=2)
+        DrawArrow.draw_arrow(screen, start_pos, input.mouse_pos, BLUE, width=2, head_length=arrow_head_length_pixels)
+        
     
     # Find cut vertices to draw them on a different color
     if len(graph.vertices) > 0:
         cut_vertices = graph.cut_vertices
     
+    
     # Draw edges
+    is_directed = graph.is_directed
     for n1 in graph.vertices:
         for n2 in graph.adjacent_vertices(n1):
-            pygame.draw.line(screen, BLUE, tuple(camera.world_to_screen(n1.pos)), tuple(camera.world_to_screen(n2.pos)), width=2)
+            start = camera.world_to_screen(n1.pos)
+            end = camera.world_to_screen(n2.pos)
+            
+            if is_directed:
+                diff = end-start
+                dist = diff.magnitude
+                
+                if dist <= 0.001:
+                    continue
+                dir_vec = diff / dist
+
+                # We end the arrow at the circunference of each node
+                length = max(0.0, dist - node_radius_pixels)
+                
+                end = start + dir_vec * length
+                
+                DrawArrow.draw_arrow(screen, start, end,
+                    BLUE, width=2, head_length=arrow_head_length_pixels)
+            else:
+                pygame.draw.line(screen, BLUE, tuple(start), tuple(end), width=2)
     
     # Draw every component. This will let you draw each component in a different color
     components = graph.connected_components
+    n_components = len(components)
+    if n_components > len(component_colors):
+        generate_colors(n_components - len(component_colors))
+    
     for i in range(len(components)):
         for n1 in components[i]:       
             if n1 in cut_vertices:
-                pygame.draw.circle(screen, RED, tuple(camera.world_to_screen(n1.pos)), node_radius * camera.zoom_level)
+                pygame.draw.circle(screen, RED, tuple(camera.world_to_screen(n1.pos)), 1.1 * node_radius_pixels)
+                pygame.draw.circle(screen, component_colors[i], tuple(camera.world_to_screen(n1.pos)), 0.85 * node_radius_pixels)
             else:
-                pygame.draw.circle(screen, BLUE, tuple(camera.world_to_screen(n1.pos)), node_radius * camera.zoom_level)
+                pygame.draw.circle(screen, component_colors[i], tuple(camera.world_to_screen(n1.pos)), node_radius_pixels)
             
-            # Render the text for each node
-            font = pygame.font.Font(None, int(font_size * camera.zoom_level))
-            text_surface = font.render(str(n1.value), True, (0, 0, 0))
+            # If zoomed out skip text
+            if camera.zoom_level < 0.5:
+                continue
+            
+            if n1 not in text_surfaces:
+                 # Render the text for each node
+                font = pygame.font.Font(None, int(font_size * camera.zoom_level))
+                text_surface = font.render(str(n1.value), True, (0, 0, 0))
+                text_surfaces[n1] = text_surface
+            else:
+                text_surface = text_surfaces[n1]
+                
             # Calculate the position to center the text on the node
             text_rect = text_surface.get_rect(center=tuple(camera.world_to_screen(n1.pos)))
             
@@ -197,4 +255,4 @@ def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radiu
     pygame.display.flip()
 
 if __name__ == "__main__":
-    start(Graph())
+    main(Graph())

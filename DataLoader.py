@@ -57,13 +57,16 @@ class DataLoader:
             characters = json.load(file, object_hook=lambda data: Character(**data))
 
         # create the dict containing all the graphs
-        graph : Graph[Node] = Graph(debug_log=True)
+        graph : Graph[Node] = Graph(debug_log=False)
 
         nodes : dict[str, Node] = {}
         # add all characters to his house graph
+        n = len(characters)
         for character in characters:
             node = Node(character.name, random() * 300 + 200, random() * 200 + 140)
             nodes[character.name] = node
+        
+        for _, node in nodes.items():
             graph.add(node)
 
         # add connections between characters

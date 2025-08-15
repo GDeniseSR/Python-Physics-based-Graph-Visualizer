@@ -1,13 +1,10 @@
 import GraphDrawer
 from DataLoader import DataLoader
-from Graph import Graph, Order
-from os import system
-import math
 import cProfile, pstats
 import random
 
 if __name__ == "__main__":
-    N = 60
+    N = 80
     graph = DataLoader.load_relationships()
     
     # Let's filter any person who doesn't have enough connections. The minimum will be random between 0 and 2
@@ -22,9 +19,11 @@ if __name__ == "__main__":
         for _ in range(n - N):
             graph.remove(graph.vertices[0])
     
+    print(graph)
+    
     profiler = cProfile.Profile()
     profiler.enable()
-    GraphDrawer.start(graph)
+    GraphDrawer.main(graph)
     profiler.disable()
     stats = pstats.Stats(profiler).sort_stats("cumtime")
     stats.print_stats(30)       # top 20 slow functions

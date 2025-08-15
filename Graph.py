@@ -16,8 +16,8 @@ class Graph[T]:
             adjacency_dict = {}
         
         self.__adj : dict[T, dict[T, float | bool]] = {}
-        for v, neighbours in adjacency_dict.items():
-            self.__adj[v] = neighbours.copy()
+        for v, neighbors in adjacency_dict.items():
+            self.__adj[v] = neighbors.copy()
         
         self.__version = 0
         self.__cache : dict[str, tuple[str, int]] = {}
@@ -62,8 +62,8 @@ class Graph[T]:
     def reverse_graph(self) -> Graph[T]:
         reverse_adj = {v : {} for v in self.__adj.keys()}
         
-        for v1, neighbours in self.__adj.items():
-            for v2, w in neighbours.items():
+        for v1, neighbors in self.__adj.items():
+            for v2, w in neighbors.items():
                 reverse_adj[v2][v1] = w
         
         reverse_graph = Graph(reverse_adj)
@@ -131,9 +131,9 @@ class Graph[T]:
     @versioned_cache("is_directed")
     def is_directed(self):
         # Check symmetry
-        for v1, neighboors in self.__adj.items():
-            for v2, w in neighboors.items():
-                if v1 in self.__adj[v2] and self.__adj[v2][v1] == w:
+        for v1, neighbors in self.__adj.items():
+            for v2, w in neighbors.items():
+                if v1 not in self.__adj[v2] or self.__adj[v2][v1] != w:
                     return True
                 
         return False
@@ -417,14 +417,10 @@ class Graph[T]:
     
     
     def __str__(self: typing.Self) -> str:
-        result = ""
-        max_len_key = max(len(str(vertex)) for vertex in self.__adj)
-        max_len_val = max(len(str(v)) for r in self.__matrix for v in r )
-        max_len = max(max_len_key, max_len_val)
-
-        result = result + f"{' ' * max_len} {' '.join([str(vertex).rjust(max_len) for vertex in self.__adj])}\n"
-        
-        for i in range(len(self.__adj)):
-            result = result + f"{str(self.__adj[i]).rjust(max_len)} {' '.join([str(j).rjust(max_len) for j in self.__matrix[i]])}\n"
-
-        return result
+        string = "Vertices: "
+        string += ", ".join(str(v) for v in self.__adj.keys()) + "\n\n"
+        for v1, neighbors in self.__adj.items():
+            for v2, w in neighbors.items():
+                string += f"{v1} --- {w} --> {v2}\n"
+                
+        return string
