@@ -1,6 +1,10 @@
 # Physics-based Graph Visualizer
 
-Simple graph visualizer and editor)
+Simple graph visualizer and editor.
+
+https://github.com/user-attachments/assets/1b05bc75-4d04-42c3-a2e3-dfa7383b79e8
+
+
 
 ## Features
 - **Force-based node placement** — nodes repel each other and edges act like springs, dynamically adjusting to keep the layout tidy.
@@ -36,11 +40,11 @@ Python 3.11 and pygame
 Run Either 'ShowDirectedGraph.py' or 'ShowHousesGraph.py' for example graphs based on Game of Thrones.
 
 ### Controls:
-Left Click on empty space: Create a new node.
-Left Click + Drag from one node to another: Create an edge.
-Right Click + Drag: Delete edges that the drag line crosses.
-Middle Mouse Button (or scroll-wheel) drag: Pan the camera.
-Mouse Wheel: Zoom in and out.
+- Left Click on empty space: Create a new node.
+- Left Click + Drag from one node to another: Create an edge.
+- Right Click + Drag: Delete edges that the drag line crosses.
+- Middle Mouse Button (or scroll-wheel) drag: Pan the camera.
+- Mouse Wheel: Zoom in and out.
 
 ## Authors
 
