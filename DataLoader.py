@@ -9,34 +9,47 @@ class DataLoader:
     @staticmethod
     def load_houses(filename="data.json") -> dict[str, Graph]:
         def add_family_connections(character:Character, house):
-            nonlocal houses
+            nonlocal houses, nodes
+            house_nodes : dict[str, Node] = nodes[house] 
             for sibling in character.siblings:
-                houses[house].connect(character.name, sibling, 0)
-                houses[house].connect(sibling, character.name, 0)
+                if not houses[house].contains(sibling) or sibling not in house_nodes:
+                    continue
+                houses[house].connect(house_nodes[character.name], house_nodes[sibling], 0)
+                houses[house].connect(house_nodes[sibling], house_nodes[character.name], 0)
             for parent in character.parents:
-                houses[house].connect(character.name, parent, 0)
-                houses[house].connect(parent, character.name, 0)
+                if not houses[house].contains(parent) or parent not in house_nodes:
+                    continue
+                houses[house].connect(house_nodes[character.name], house_nodes[parent], 0)
+                houses[house].connect(house_nodes[parent], house_nodes[character.name], 0)
             for guardian in character.guardedBy:
-                houses[house].connect(character.name, guardian, 0)
-                houses[house].connect(guardian, character.name, 0)
+                if not houses[house].contains(guardian) or guardian not in house_nodes:
+                    continue
+                houses[house].connect(house_nodes[character.name], house_nodes[guardian], 0)
+                houses[house].connect(house_nodes[guardian], house_nodes[character.name], 0)
         
         # load characters from json file
         characters: list[Character] = []
+        
         with open(filename, "r") as file:
             characters = json.load(file, object_hook=lambda data: Character(**data))
 
         # create the dict containing all the graphs
-        houses = defaultdict(Graph)
-
+        houses : dict[str, Graph] = defaultdict(Graph)
+        nodes : dict[str, dict[str, Node]] = defaultdict(dict)
+        
         # add all characters to his house graph
         for character in characters:
             x = (random() - 0.5) * 300
             y = (random() - 0.5) * 300
             if isinstance(character.house, str):
-                houses[character.house].add(Node(character.name, x, y))
+                node = Node(character.name, x, y)
+                houses[character.house].add(node)
+                nodes[character.house][character.name] = node
             else:
                 for house in character.house:
-                    houses[house].add(Node(character.name, x, y))
+                    node = Node(character.name, x, y)
+                    houses[house].add(node)
+                    nodes[house][character.name] = node
 
         # add connections between characters
         for character in characters:

@@ -5,13 +5,13 @@ from Camera import Camera
 
 def apply_node_forces(graph : Graph[Node], input : Input, camera : Camera, selected_node : Node, delta_time : float):
     spring_length = 100
-    spring_force = 0.8
+    spring_force = 0.7
     repulsion_strength = 25
     follow_mouse_strenght = 3
     follow_mouse_max_distance = 50
     
     for n1 in graph.vertices:
-        # The node we're selecting will move towards the mouse
+        # The node we select will move towards the mouse
         if input.is_long_pressed(1) and selected_node == n1:            
             world_mouse_pos = camera.screen_to_world(input.mouse_pos)
             
