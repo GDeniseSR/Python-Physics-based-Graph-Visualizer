@@ -7,13 +7,11 @@ https://github.com/user-attachments/assets/1b05bc75-4d04-42c3-a2e3-dfa7383b79e8
 
 
 ## Features
-- **Force-based node placement** — nodes repel each other and edges act like springs, dynamically adjusting to keep the layout tidy.
-- **Interactive editing** — add, remove, and connect nodes using your mouse (click and drag).
+- **Force-based node placement**: nodes repel each other and edges act like springs, dynamically adjusting to keep the layout tidy.
+- **Interactive editing**: add, remove, and connect nodes using your mouse (click and drag) and basic camera.
 - **Supports directed graphs** with arrowed edges.
-- **Dynamic component coloring** — each connected component is assigned a unique color.
-- **Cut vertex highlighting** — vertices that, when removed, increase the number of connected components are outlined in red.
-- **Zooming and panning**.
-- **Real-time rendering** — smooth updates at ~60 FPS for graphs of up to 100 nodes.
+- **Dynamic component coloring**: each connected component is assigned a unique color.
+- **Cut vertex highlighting**: vertices that, when removed, increase the number of connected components are outlined in red.
 
 ### **Graph class**:
 
