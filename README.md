@@ -35,7 +35,12 @@ Python 3.11 and pygame
 
 ### Running program
 
-Run Either 'ShowDirectedGraph.py' or 'ShowHousesGraph.py' for example graphs based on Game of Thrones.
+Run either 'example/ShowDirectedGraph.py' or 'example/ShowHousesGraph.py' from the project root for example graphs based on Game of Thrones:
+
+```
+python -m example.ShowDirectedGraph
+python -m example.ShowHousesGraph
+```
 
 ### Controls:
 - Left Click on empty space: Create a new node.
