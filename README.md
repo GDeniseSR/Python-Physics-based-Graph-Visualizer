@@ -57,7 +57,3 @@ python -m example.ShowHousesGraph
 - Right Click + Drag: Delete edges that the drag line crosses.
 - Middle Mouse Button (or scroll-wheel) drag: Pan the camera.
 - Mouse Wheel: Zoom in and out.
-
-## Authors
-
-Gael Denise
