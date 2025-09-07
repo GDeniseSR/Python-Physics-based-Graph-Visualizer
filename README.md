@@ -29,18 +29,24 @@ Generic, versioned graph implementation supporting directed/undirected and weigh
 
 ## Getting Started
 
-### Dependencies
+### Requeriments
 
-Python 3.11 and the following libraries:
-pygame
-numpy
-cProfile
+- **Python**: 3.11  
+- **Libraries**:
+  - [pygame](https://www.pygame.org/news)  
+  - [numpy](https://numpy.org/)  
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### Running program
 
 Run either 'example/ShowDirectedGraph.py' or 'example/ShowHousesGraph.py' from the project root for example graphs based on Game of Thrones:
 
-```
+```bash
 python -m example.ShowDirectedGraph
 python -m example.ShowHousesGraph
 ```
