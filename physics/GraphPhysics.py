@@ -1,7 +1,7 @@
-from Graph import Graph
-from Node import Node
-from Input import Input
-from Camera import Camera
+from graph.Graph import Graph
+from visualizer.Node import Node
+from visualizer.Input import Input
+from visualizer.Camera import Camera
 
 def apply_node_forces(graph : Graph[Node], input : Input, camera : Camera, selected_node : Node, delta_time : float):
     spring_length = 100

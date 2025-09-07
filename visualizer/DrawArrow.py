@@ -1,5 +1,5 @@
 import pygame
-from Vector2 import Vector2
+from visualizer.Vector2 import Vector2
 
 def draw_arrow(
     surface : pygame.Surface,

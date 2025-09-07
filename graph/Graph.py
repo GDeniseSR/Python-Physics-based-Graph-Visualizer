@@ -344,7 +344,7 @@ class Graph[T]:
         """
         start = component_by_depth[0]
         
-        dom = self.get_conn_comp_dominators(component_by_depth)
+        dom = self.get_connected_comp_dominators(component_by_depth)
         dom[start].remove(start)
         for v in component_by_depth[1:]:
             dom[v].remove(start)
@@ -362,7 +362,7 @@ class Graph[T]:
         
         return dominators
     
-    def get_conn_comp_dominators(self, component_by_depth : list[T]) -> dict[T, set[T]]:
+    def get_connected_comp_dominators(self, component_by_depth : list[T]) -> dict[T, set[T]]:
         dom = {v: set(component_by_depth) for v in component_by_depth}
         dom[component_by_depth[0]] = {component_by_depth[0]}
         

@@ -1,5 +1,5 @@
-import GraphDrawer
-from DataLoader import DataLoader
+import visualizer.GraphDrawer
+from example.DataLoader import DataLoader
 import cProfile, pstats
 import random
 
@@ -21,11 +21,11 @@ if __name__ == "__main__":
     
     print(graph)
     
-    profiler = cProfile.Profile()
-    profiler.enable()
-    GraphDrawer.main(graph)
-    profiler.disable()
-    stats = pstats.Stats(profiler).sort_stats("cumtime")
-    stats.print_stats(30)       # top 20 slow functions
-    stats.dump_stats("out.prof")
+    # profiler = cProfile.Profile()
+    # profiler.enable()
+    visualizer.GraphDrawer.main(graph)
+    # profiler.disable()
+    # stats = pstats.Stats(profiler).sort_stats("cumtime")
+    # stats.print_stats(30)       # top 20 slow functions
+    # stats.dump_stats("out.prof")
 

@@ -1,13 +1,14 @@
-from Character import Character
-from Graph import Graph
+from example.Character import Character
+from graph.Graph import Graph
+from visualizer.Node import Node
+
 import json
 from collections import defaultdict
-from Node import Node
 from random import random
 
 class DataLoader:
     @staticmethod
-    def load_houses(filename="data.json") -> dict[str, Graph]:
+    def load_houses(filename="example/data.json") -> dict[str, Graph]:
         def add_family_connections(character:Character, house):
             nonlocal houses, nodes
             house_nodes : dict[str, Node] = nodes[house] 
@@ -63,7 +64,7 @@ class DataLoader:
     
     
     @staticmethod
-    def load_relationships(filename="data.json") -> Graph:
+    def load_relationships(filename="example/data.json") -> Graph:
         # load characters from json file
         characters: list[Character] = []
         with open(filename, "r") as file:

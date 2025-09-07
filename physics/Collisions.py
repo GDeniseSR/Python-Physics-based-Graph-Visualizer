@@ -1,4 +1,4 @@
-from Vector2 import Vector2
+from visualizer.Vector2 import Vector2
 
 def orientation(a : Vector2, b : Vector2, c : Vector2):
     """Returns the orientation of the ordered triplet (p, q, r).

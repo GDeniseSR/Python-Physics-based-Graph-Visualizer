@@ -1,5 +1,5 @@
-import GraphDrawer
-from DataLoader import DataLoader
+import visualizer.GraphDrawer
+from example.DataLoader import DataLoader
 
 if __name__ == "__main__":
     N = 80
@@ -7,6 +7,6 @@ if __name__ == "__main__":
     
     for house, graph in graphs.items():
         print(house)
-        GraphDrawer.main(graph)
+        visualizer.GraphDrawer.main(graph)
 
 

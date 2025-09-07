@@ -1,6 +1,6 @@
 import pygame
 from typing import Union
-from Vector2 import Vector2
+from visualizer.Vector2 import Vector2
 
 class Input():
     def __init__(self) -> None:

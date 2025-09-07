@@ -1,4 +1,4 @@
-from Vector2 import Vector2
+from visualizer.Vector2 import Vector2
 
 class Node[T]:
     def __init__(self, value:T, x, y) -> None:

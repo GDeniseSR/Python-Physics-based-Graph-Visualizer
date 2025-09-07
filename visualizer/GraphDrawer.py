@@ -2,22 +2,23 @@ import pygame
 from pygame.surface import Surface
 import colorsys
 
-import DrawArrow
+import visualizer.DrawArrow
 
-from Graph import *
-from Input import *
-from Node import *
-from Vector2 import Vector2
-from Camera import Camera
-import GraphPhysics
-import Collisions
+from graph.Graph import *
+from visualizer.Input import *
+from visualizer.Node import *
+from visualizer.Vector2 import Vector2
+from visualizer.Camera import Camera
+import physics.GraphPhysics
+import physics.Collisions
 
+# Checks if (x, y) is inside any node of the graph
 def collides_with_any_node(x, y, graph : Graph, distance = 0):
     for node in graph.vertices:
-        if Collisions.distance_btwn_points_sq(Vector2(x, y), node.pos) < distance**2:
+        dist_sq_to_node = physics.Collisions.distance_btwn_points_sq(Vector2(x, y), node.pos)
+        if dist_sq_to_node < distance * distance:
             return node
     return None
-
 
 component_colors : list[tuple[int, int, int]] = []
 _hue = 0.0  # starting hue
@@ -34,28 +35,73 @@ def generate_colors(n: int = 1):
         
 text_surfaces : dict[Node, Surface] = {}
 
-def main(graph:Graph[Node]):
-    def on_left_press():
-        nonlocal graph, input, left_click_drag_node, node_radius
+
+LEFT_MOUSE_BUTTON = 1
+MIDDLE_MOUSE_BUTTON = 2
+RIGHT_MOUSE_BUTTON = 3
+
+camera_desired_position : Vector2 = Vector2.ZERO
+
+def handle_mouse_motion(camera:Camera, graph:Graph, input_manager:Input):
+    global camera_desired_position
+    # Camera movement
+    if input_manager.is_pressed(MIDDLE_MOUSE_BUTTON):
+        mouse_pos_delta : Vector2 = (input_manager.mouse_pos - input_manager.last_mouse_pos) / camera.zoom_level
+
+        # Limit the max speed of camera movement to prevent large jumps
+        max_speed = 20 / camera.zoom_level
+        mouse_pos_delta.clamp_magnitude(max_speed)
+
+        # Set the desired camera position
+        camera_desired_position -=  mouse_pos_delta
+
+    # Checks if the right mouse button is pressed and the mouse is moving, to break any edge the mouse crosses
+    if input_manager.is_pressed(RIGHT_MOUSE_BUTTON):
+        for n1 in graph.vertices:
+            for n2 in list(graph.adjacent_vertices(n1)):
+                last_mouse_pos = camera.screen_to_world(input_manager.last_mouse_pos)
+                current_mouse_pos = camera.screen_to_world(input_manager.mouse_pos)
+                
+                cut_edge = physics.Collisions.lines_intersect(last_mouse_pos,
+                                            current_mouse_pos,
+                                            n1.pos, n2.pos)
+                if cut_edge:
+                    graph.disconnect(n1, n2)
+
+def handle_event(event, camera:Camera, graph:Graph, input_manager:Input, delta_time:float) -> bool:
+    if event.type == pygame.QUIT:  # User closes the window
+        return False
+    
+    if event.type == pygame.MOUSEMOTION:
+        handle_mouse_motion(camera, graph, input_manager)
         
-        x,y = camera.screen_to_world(input.mouse_pos)
+    elif event.type == pygame.MOUSEWHEEL:
+        camera.zoom_level += event.y * 3 * delta_time
+    
+    return True
+
+def main(graph:Graph[Node]):
+    # Input handling
+    def on_left_press():
+        nonlocal graph, input_manager, left_click_drag_node, node_radius
+        
+        x,y = camera.screen_to_world(input_manager.mouse_pos)
         
         left_click_drag_node = None
         node = collides_with_any_node(x, y, graph, 1*node_radius)
         if node != None:
             left_click_drag_node = node
 
-
     def on_left_click():
-        nonlocal graph, input, camera, node_radius
-        x, y = camera.screen_to_world(input.mouse_pos)
+        nonlocal graph, input_manager, camera, node_radius
+        x, y = camera.screen_to_world(input_manager.mouse_pos)
         node = collides_with_any_node(x, y, graph, 2*node_radius)
         if node == None:
             graph.add(Node(len(graph.vertices), x, y))
             
     def on_right_click():
-        nonlocal graph, input, camera, node_radius
-        x, y = camera.screen_to_world(input.mouse_pos)
+        nonlocal graph, input_manager, camera, node_radius
+        x, y = camera.screen_to_world(input_manager.mouse_pos)
         node = collides_with_any_node(x, y, graph, node_radius)
         if node != None:
             graph.remove(node)
@@ -69,6 +115,20 @@ def main(graph:Graph[Node]):
             if end_node != None and left_click_drag_node != end_node:
                 graph.connect(left_click_drag_node, end_node, 1)
     
+    def add_input_callbacks():
+        nonlocal input_manager
+        
+        input_manager.add_mouse_button(LEFT_MOUSE_BUTTON, short_press_threshold=0.2)
+        input_manager.add_mouse_button(MIDDLE_MOUSE_BUTTON, 0.2)
+        input_manager.add_mouse_button(RIGHT_MOUSE_BUTTON, 0.2)
+
+        input_manager.add_press_function(LEFT_MOUSE_BUTTON, on_left_press)
+        input_manager.add_short_release_function(LEFT_MOUSE_BUTTON, on_left_click)
+        input_manager.add_long_release_function(LEFT_MOUSE_BUTTON, on_left_drag_stop)
+
+        input_manager.add_short_release_function(RIGHT_MOUSE_BUTTON, on_right_click)
+    
+    global camera_desired_position
     
     # Initialize Pygame
     pygame.init()
@@ -79,7 +139,7 @@ def main(graph:Graph[Node]):
 
     # Camera
     camera = Camera()
-    desired_position : Vector2 = camera.position
+    camera_desired_position = camera.position
 
     # Main loop control variable
     running = True
@@ -95,66 +155,28 @@ def main(graph:Graph[Node]):
     left_click_drag_node : Node = None
 
     # Input management
-    LEFT_MOUSE_BUTTON = 1
-    MIDDLE_MOUSE_BUTTON = 2
-    RIGHT_MOUSE_BUTTON = 3
-    input = Input()
-
-    input.add_mouse_button(LEFT_MOUSE_BUTTON, short_press_threshold=0.2)
-    input.add_mouse_button(MIDDLE_MOUSE_BUTTON, 0.2)
-    input.add_mouse_button(RIGHT_MOUSE_BUTTON, 0.2)
-
-    input.add_press_function(LEFT_MOUSE_BUTTON, on_left_press)
-    input.add_short_release_function(LEFT_MOUSE_BUTTON, on_left_click)
-    input.add_long_release_function(LEFT_MOUSE_BUTTON, on_left_drag_stop)
-
-    input.add_short_release_function(RIGHT_MOUSE_BUTTON, on_right_click)
+    input_manager = Input()
+    add_input_callbacks()
 
     # Main game loop
     while running:
         events = pygame.event.get()
 
-        # Updates the input class
-        input.update(delta_time, events)
+        # Updates the input_manager class
+        input_manager.update(delta_time, events)
         
         # Event handling
         for event in events:
-            if event.type == pygame.QUIT:  # User closes the window
-                running = False
-            
-            if event.type == pygame.MOUSEMOTION:
-                # Camera movement
-                if input.is_pressed(MIDDLE_MOUSE_BUTTON):
-                    mouse_pos_delta : Vector2 = (input.mouse_pos - input.last_mouse_pos) / camera.zoom_level
-
-                    # Limit the max speed of camera movement to prevent large jumps
-                    max_speed = 20 / camera.zoom_level
-                    mouse_pos_delta.clamp_magnitude(max_speed)
-
-                    # Set the desired camera position
-                    desired_position -=  mouse_pos_delta
-
-                # Checks if the right mouse button is pressed and the mouse is moving, to break any edge the mouse crosses
-                if input.is_pressed(RIGHT_MOUSE_BUTTON):
-                    for n1 in graph.vertices:
-                        for n2 in list(graph.adjacent_vertices(n1)):
-                            cut_edge = Collisions.lines_intersect(camera.screen_to_world(input.last_mouse_pos),
-                                                       camera.screen_to_world(input.mouse_pos),
-                                                       n1.pos, n2.pos)
-                            if cut_edge:
-                                graph.disconnect(n1, n2)
-                
-            elif event.type == pygame.MOUSEWHEEL:
-                camera.zoom_level += event.y * 3 * delta_time
+            running = handle_event(event, camera, graph, input_manager, delta_time)
         
         # Smoothly move the camera towards the desired position using linear interpolation (lerp)
         lerp_speed = 20
         t = lerp_speed * delta_time
-        camera.position += (desired_position - camera.position) * min(t, 1)
+        camera.position += (camera_desired_position - camera.position) * min(t, 1)
         
-        GraphPhysics.apply_node_forces(graph, input, camera, left_click_drag_node, delta_time)
+        physics.GraphPhysics.apply_node_forces(graph, input_manager, camera, left_click_drag_node, delta_time)
 
-        draw_graph(screen, graph, camera, input, node_radius, left_click_drag_node)
+        draw_graph(screen, graph, camera, input_manager, node_radius, left_click_drag_node)
         
         # Cap the frame rate and get the time in seconds between frames
         delta_time = clock.tick(FPS) / 1000
@@ -163,7 +185,7 @@ def main(graph:Graph[Node]):
     pygame.quit()
 
 
-def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radius:int, left_drag_start_node:Node):
+def draw_graph(screen, graph:Graph[Node], camera:Camera, input_manager:Input, node_radius:int, left_drag_start_node:Node):
     # Define colors (RGB)
     WHITE = (255, 255, 255)
     RED = (255, 40, 40)
@@ -179,13 +201,13 @@ def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radiu
     arrow_head_length_pixels = 15 * camera.zoom_level
     
     # Update the start of the dragging line point if it's dragging a node and draw said line
-    if input.is_long_pressed(1):
+    if input_manager.is_long_pressed(1):
         if left_drag_start_node != None:
             start_pos = camera.world_to_screen(left_drag_start_node.pos)
         else:
-            start_pos = input.get_button(1).start_mouse_pos
+            start_pos = input_manager.get_button(1).start_mouse_pos
         
-        DrawArrow.draw_arrow(screen, start_pos, input.mouse_pos, BLUE, width=2, head_length=arrow_head_length_pixels)
+        visualizer.DrawArrow.draw_arrow(screen, start_pos, input_manager.mouse_pos, BLUE, width=2, head_length=arrow_head_length_pixels)
         
     
     # Find cut vertices to draw them on a different color
@@ -213,7 +235,7 @@ def draw_graph(screen, graph:Graph[Node], camera:Camera, input:Input, node_radiu
                 
                 end = start + dir_vec * length
                 
-                DrawArrow.draw_arrow(screen, start, end,
+                visualizer.DrawArrow.draw_arrow(screen, start, end,
                     BLUE, width=2, head_length=arrow_head_length_pixels)
             else:
                 pygame.draw.line(screen, BLUE, tuple(start), tuple(end), width=2)
