@@ -31,7 +31,10 @@ Generic, versioned graph implementation supporting directed/undirected and weigh
 
 ### Dependencies
 
-Python 3.11 and pygame
+Python 3.11 and the following libraries:
+pygame
+numpy
+cProfile
 
 ### Running program
 
